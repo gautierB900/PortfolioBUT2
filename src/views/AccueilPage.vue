@@ -30,68 +30,60 @@ const sections = [
   <div class="accueil-page">
     <v-card elevation="0" class="mb-6">
       <v-card-text class="pa-8">
-        <h1 class="text-h3 mb-4">Bienvenue sur mon Portfolio</h1>
-        <p class="text-body1 mb-2">
-          Je suis <strong>{{ portfolioData.personal.prenom }} {{ portfolioData.personal.nom }}</strong>
-        </p>
-        <p class="text-body1 mb-4">
-          Email: <v-chip label size="small">{{ portfolioData.personal.mail }}</v-chip>
-        </p>
-        <p class="text-body2">
-          Ce portfolio présente mes savoir-faire, mes projets et mon expérience professionnelle.
-          Explorez les différentes sections pour découvrir mes compétences et réalisations.
-        </p>
+        <h1 class="text-h3 mb-4">Bienvenue sur le Portfolio de BELEY Gautier</h1>
       </v-card-text>
     </v-card>
 
-   
-        <v-card elevation="1" class="pa-4 h-100">
-          <h2 class="text-h5 mb-2">But du site</h2>
-          <p class="text-body2">
-            Ce site regroupe les elements cles de mon stage et de ma formation. Il met en avant
-            mes competences, mes missions et les apprentissages realises durant l'annee.
-          </p>
-        </v-card>
-  
+
+    <v-card elevation="1" class="pa-4 h-100">
+      <h2 class="text-h5 mb-2">But du site</h2>
+      <p class="text-body2">
+        Le site a pour but d'évoquer mes savoir-faire acquis durant le stage de deuxième année de deuxième année de BUT Informatique à l'IUT Marie et Louis Pasteur à Belort.
+      Les savoir-faire énumérés sur ce site s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
+      J'ai effectué ce stage chez APRR qui est une filiale de Eiffage à Saint-Apollinaire. 
+      Ce stage s'est fait sur une durée de 10 semaines, du 7 avril au 12 juin 2026.
+      </p>
+    </v-card>
+
+    <br>
+
+
+    <v-card elevation="1" class="pa-4 h-100">
+      <h2 class="text-h5 mb-2">Description du contexte entreprise du stage </h2>
+      <p class="text-body2">
+        <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est une filiale d'Eiffage, une concession d'autoroute.
+        Elle a été créé en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe.
         <br>
- 
-
-        <v-card elevation="1" class="pa-4 h-100">
-          <h2 class="text-h5 mb-2">Presentation de l'entreprise</h2>
-          <p class="text-body2">
-            Presentation rapide de l'entreprise d'accueil : secteur, activite principale et
-            role de l'equipe dans laquelle j'ai travaille. A completer avec les informations
-            de votre entreprise.
-          </p>
-        </v-card>
-
         <br>
+        Je prends place dans le département des services méthodes et contrats (SMC) qui se situe dans le départment études et éditions logiciels (DEEL) qui est lui dans le département des systèmes et opérations péages (DSOP).
+        La mission du département SMC est de faire des tests automatisés sur des applications de l'entreprise. Le département a pour but d'imposer un minimum de tests automatisés pour la validation d'une version d'application.
+        <br>
+        <br>
+        Pendant mon stage, j'ai notamment travaillé avec <strong>GALLI David</strong>, qui est mon tuteur, <strong>CHHEAN Sokchy</strong>, qui est un technicien informatique en alternance, et <strong>CHATILLON Frédéric</strong>, qui est le chef du département SMC.
+      </p>
+    </v-card>
 
-    <v-row class="mb-6" dense>
-      <v-col cols="12" md="6">
-        <v-card elevation="1" class="pa-4 h-100">
-          <h2 class="text-h5 mb-2">Organigramme</h2>
-          <p class="text-body2 mb-2">
-            Vue d'ensemble de l'organisation de l'entreprise et de mon positionnement.
-          </p>
-          <ul class="organigramme">
-            <li>Direction / encadrement</li>
-            <li>Service ou pole d'accueil</li>
-            <li>Equipe projet</li>
-            <li>Mon role / stage</li>
-          </ul>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="6">
-        <v-card elevation="1" class="pa-4 h-100">
-          <h2 class="text-h5 mb-2">Contexte du stage</h2>
-          <p class="text-body2">
-            Contexte, objectifs et missions principales du stage. Preciser la duree, les
-            outils utilises et les enjeux du projet.
-          </p>
-        </v-card>
-      </v-col>
-    </v-row>
+    <br>
+
+    <v-card elevation="1" class="pa-4 h-100">
+      <h2 class="text-h5 mb-2">Organigramme</h2>
+      <p class="text-body2 mb-2">
+        Voici l'organigramme d'APRR, en commençant de la présidente jusqu'à mon département : 
+      </p>
+      <!--TODO mettre les images de l'organigramme-->
+    </v-card>
+
+    <br>
+
+    <v-card elevation="1" class="pa-4 h-100">
+      <h2 class="text-h5 mb-2">Contexte du stage</h2>
+      <p class="text-body2">
+        Les missions principales de mon stage sont d'automatisés des tests en c# avec le Framework de l'entreprise et le reporting sur la qualités des livrables du département.
+        Les technologies utilisées sont Azure DevOps comme plateforme de développement, Visual Studio 2022 comme IDE.
+      </p>
+    </v-card>
+
+    <br>
 
     <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Les 3 grandes parties</h2>

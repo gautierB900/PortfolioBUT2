@@ -9,11 +9,7 @@ const data = portfolioData.sections.technique
 
 <template>
   <div class="page-container">
-    <div class="mb-6">
-      <v-btn color="primary" variant="outlined" @click="router.back()" prepend-icon="mdi-arrow-left">
-        Retour
-      </v-btn>
-    </div>
+    
 
     <h1 class="text-h3 mb-2">{{ data.title }} - Bilan & Analyse</h1>
     <p class="text-body2 text-grey mb-6">
@@ -25,15 +21,7 @@ const data = portfolioData.sections.technique
       <SkillBilan v-for="(bilan, idx) in data.bilan" :key="idx" :bilan="bilan" />
     </div>
 
-    <!-- Navigation -->
-    <div class="mt-6 d-flex justify-space-between">
-      <v-btn color="primary" variant="outlined" @click="router.push('/technique/description')">
-        Voir la Description
-      </v-btn>
-      <v-btn color="primary" variant="outlined" @click="router.back()">
-        Retour
-      </v-btn>
-    </div>
+    
   </div>
 </template>
 

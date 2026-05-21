@@ -12,30 +12,19 @@ const sections = ref([
   {
     title: 'Technique',
     icon: 'mdi-code-braces',
-    children: [
-      { title: 'Description', route: '/technique/description' },
-      { title: 'Bilan', route: '/technique/bilan' },
-    ],
+    route: '/technique/description',
   },
   {
     title: 'Suivi de Projet',
     icon: 'mdi-clipboard-text',
-    children: [
-      { title: 'Description', route: '/suivi-projet/description' },
-      { title: 'Bilan', route: '/suivi-projet/bilan' },
-    ],
+    route: '/suivi-projet/description',
   },
   {
     title: 'Intégration en Entreprise',
     icon: 'mdi-briefcase',
-    children: [
-      { title: 'Description', route: '/integration-entreprise/description' },
-      { title: 'Bilan', route: '/integration-entreprise/bilan' },
-    ],
+    route: '/integration-entreprise/description',
   },
 ])
-
-const expandedItems = ref([0, 1, 2, 3])
 
 const navigateTo = (route: string) => {
   router.push(route)
@@ -59,36 +48,15 @@ const drawer = computed({
 <template>
   <v-navigation-drawer v-model="drawer">
     <v-list nav>
-      <template v-for="(section, idx) in sections" :key="`children-${idx}`">
-        <v-list-item
-          v-if="!section.children"
-          :prepend-icon="section.icon"
-          class="mb-1"
-          @click="navigateTo(section.route)"
-        >
-          <v-list-item-title>{{ section.title }}</v-list-item-title>
-        </v-list-item>
-        <v-list-group v-if="section.children" :value="section.title">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              v-bind="props"
-              :prepend-icon="section.icon"
-              class="mb-1"
-            >
-              {{ section.title }}
-            </v-list-item>
-          </template>
-
-          <v-list-item
-            v-for="child in section.children"
-            :key="child.route"
-            @click="navigateTo(child.route)"
-            class="ml-6"
-          >
-            <v-list-item-title>{{ child.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list-group>
-      </template>
+      <v-list-item
+        v-for="(section, idx) in sections"
+        :key="`section-${idx}`"
+        :prepend-icon="section.icon"
+        class="mb-1"
+        @click="navigateTo(section.route)"
+      >
+        <v-list-item-title>{{ section.title }}</v-list-item-title>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>

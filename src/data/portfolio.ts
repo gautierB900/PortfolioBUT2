@@ -26,13 +26,16 @@ export const portfolioData = {
           traces: [
             {
               numero: '1',
-              titre: 'Automatisation d’un parcours utilisateur',
-              legende: 'Script Selenium couvrant un flux complet avec vérifications de l’UI.',
+              titre: 'Cas de teste au formalisme Azure DevOps',
+              legende: 'J\'ai rédigé ce cas de test après discussion avec le métier et après analyse des fonctionnalité du site. Un cas de test représente un chemin utilisateur, il va ensuite représenter un test.',
+              image:'../public/image/TraceCasDeTest.png'
+
             },
             {
               numero: '2',
-              titre: 'Rapport de tests et corrections',
-              legende: 'Synthèse des anomalies détectées et corrections proposées.',
+              titre: 'Création des tests plans et implémentation des cas de test',
+              legende: 'J\ai créé des Tests Plans pour pouvoir rassembler les cas de test et créer des campagnes de test par version. Cela a pour but de créer un historique des anciens tests effectués',
+              image:'../public/image/TraceTestPlans.png'
             },
           ],
         },
@@ -49,15 +52,21 @@ export const portfolioData = {
               color: '#C7CEEA',
               description: 'Mettre en place une navigation claire et hiérarchisée.',
             },
+            {
+              name: 'Journaliser son code',
+              color: '#C7CEEA',
+              description: 'Mettre en place une navigation claire et hiérarchisée.',
+            },
           ],
           traces: [
             {
-              numero: '1',
-              titre: 'Structure des vues principales',
-              legende: 'Organisation des pages et composants principaux du portfolio.',
+              numero: '3',
+              titre: 'Méthodes de test en c# via le framework de l\'entreprise',
+              legende: 'L\'appellation [Fact] sert a déclarer la class comme étant de type test. Le test ce consitue en plusieurs parties : Nettoyage des données et Déroulement des tests',
+              image: '../public/image/TraceFrameWorkNormeEntreprise.png'
             },
             {
-              numero: '2',
+              numero: '4',
               titre: 'Système de navigation',
               legende: 'Mise en place de routes et d’un menu cohérent.',
             },
@@ -84,14 +93,18 @@ export const portfolioData = {
           ],
           traces: [
             {
-              numero: '1',
-              titre: 'Structure des vues principales',
-              legende: 'Organisation des pages et composants principaux du portfolio.',
+              numero: '5',
+              titre: 'Récupération d\'un élément graphique depuis une page Web',
+              legende: 'Cette trace montre comment récupérer le lien d\'un élément graphique Web, en créant son selector.Mais, il faut que le selector soit optimal et réutilisable, pouvoir être utiliser sur différent élément.',
+              image: '../public/image/TraceConsoleGoogle.png'
+
             },
             {
-              numero: '2',
-              titre: 'Système de navigation',
-              legende: 'Mise en place de routes et d’un menu cohérent.',
+              numero: '6',
+              titre: 'Stockage des éléments graphiques',
+              legende: 'Création d\'un fichier spécifique pour stocker tous les éléments. Cette méthode de récupération car elle a plus de 99 appels ce qui la rend très efficace et optimal.',
+              image: '../public/image/TraceIGraphicElement.png'
+
             },
           ],
         },
@@ -112,14 +125,18 @@ export const portfolioData = {
           ],
           traces: [
             {
-              numero: '1',
-              titre: 'Structure des vues principales',
-              legende: 'Organisation des pages et composants principaux du portfolio.',
+              numero: '7',
+              titre: 'Association des tests développés au cas de test associé',
+              legende: 'Une fois le test implémenté et fonctionnel, il faut le lier à son cas de test pour pouvoir le lancer depuis Azure DevOps. On les lie en les connectants via l\'ID du cas de test',
+              image: '../public/image/TraceAssociationTest.png'
+
             },
             {
-              numero: '2',
-              titre: 'Système de navigation',
-              legende: 'Mise en place de routes et d’un menu cohérent.',
+              numero: '8',
+              titre: 'Lancement du test automatisé',
+              legende: 'Quand le test est automatisé, il faut le lancer sur la VM, et on a un compte rendu sur l\'exécution du test parties par parties ',
+              image: '../public/image/TraceTestRun.png'
+
             },
           ],
         },
@@ -129,21 +146,15 @@ export const portfolioData = {
           skillName: 'Concevoir un cas de test répondant à un besoin métier',
           elementaryDetails: [
             {
-              name: 'Composants reutilisables',
-              context: 'Creation des vues principales et de blocs communs.',
-              learningContext: 'Vu en cours puis applique dans le portfolio.',
+              name: 'Rédiger un cas de test avec la bonne norme',
+              context: 'Création de cas de test pour le métier.',
+              learningContext: 'Appris en stage, je ne connaissais pas cette notion auparavant.',
               difficulty: 'Moyen',
             },
             {
-              name: 'Navigation',
-              context: 'Mise en place des routes et des liens.',
-              learningContext: 'Appris en cours, consolide en projet.',
-              difficulty: 'Moyen',
-            },
-            {
-              name: 'Coherence visuelle',
-              context: 'Uniformiser les styles sur toutes les pages.',
-              learningContext: 'Appris en autodidacte et par la pratique.',
+              name: 'Créer un Test Plan via un cas de test',
+              context: 'Une fois les cas de tests validé par le métier, j\'ai du créer des test plans selon les versions du sites.',
+              learningContext: 'Les Tests Plans, étant dédiés à Azure DevOps, je n\'y avais pas connaissance avant le stage.',
               difficulty: 'Faible',
             },
           ],
@@ -151,10 +162,10 @@ export const portfolioData = {
           learningContext: 'Appris en cours et consolidé lors du projet portfolio',
           difficulty: 'Moyen',
           level: 'Bon',
-          levelBefore: 'Moyen',
+          levelBefore: 'Faible',
           levelAfter: 'Bon',
-          levelBeforeText: 'Connaissances de base en mise en page et composants.',
-          levelAfterText: 'Application autonome et structurée des bonnes pratiques UI.',
+          levelBeforeText: 'Je ne connaissais pas cette notion et ce formalisme',
+          levelAfterText: 'Capable de créer différents cas de test pour différents écrans avec le formalisme d\'Azure DevOps',
         },
         {
           skillName: 'Concevoir des tests de bout en bout pour une application web',

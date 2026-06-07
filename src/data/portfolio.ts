@@ -38,7 +38,7 @@ export const portfolioData = {
               numero: '1',
               titre: 'Cas de test au formalisme Azure DevOps',
               legende: 'Trace n°1 : cas de test « Contrôle visuellement les Jalons » rédigé sous Excel au formalisme attendu par Azure DevOps Test Plans.',
-              image: `${import.meta.env.BASE_URL}image/TraceCasDeTest.png`,
+              image: '../public/image/TraceCasDeTest.png',
               descriptionGenerale: 'La trace n°1 est une copie d\'écran d\'un de mes cas de test, rédigé dans un fichier Excel. À mon arrivée chez APRR, j\'ai d\'abord pris connaissance des écrans de l\'application MAESTRO déjà testés, puis mon tuteur, qui porte la vision métier, m\'a indiqué les écrans qu\'il souhaitait voir couverts. Pour chaque écran, je rédigeais un fichier Excel regroupant l\'ensemble des cas de test couvrant ses fonctionnalités. Le cas de test présenté dans la trace n°1 concerne l\'écran « Jalons &amp; Livrables » et vérifie l\'affichage correct des jalons. Chaque ligne décrit une étape : une action utilisateur dans la colonne <em>Step Action</em> et le résultat attendu correspondant dans la colonne <em>Step Expected</em>.',
               descriptifSavoirFaire: [
                 {
@@ -55,7 +55,7 @@ export const portfolioData = {
               numero: '2',
               titre: 'Organisation des cas de test en Test Plans versionnés',
               legende: 'Trace n°2 : arborescence des Test Plans dans Azure DevOps, organisés par version de MAESTRO et par suites thématiques.',
-              image: `${import.meta.env.BASE_URL}image/TraceTestPlans.png`,
+              image: '../public/image/TraceTestPlans.png',
               descriptionGenerale: 'La trace n°2 montre le module Test Plans d\'Azure DevOps, où sont regroupés et organisés tous les cas de test que j\'ai rédigés. Une fois un fichier Excel validé par le métier, je l\'injectais dans Azure DevOps, ce qui créait les cas de test correspondants. Je les rangeais ensuite dans une arborescence à deux niveaux : par version de l\'application et, à l\'intérieur, par suites thématiques correspondant aux écrans.',
               descriptifSavoirFaire: [
                 {
@@ -94,7 +94,7 @@ export const portfolioData = {
               numero: '3',
               titre: 'Inspection du DOM d\'une application Power Platform',
               legende: 'Trace n°3 : inspection via les outils de développement de Chrome d\'un élément de MAESTRO, application développée en low-code (Power Platform).',
-              image: `${import.meta.env.BASE_URL}image/TraceConsoleGoogle.png`,
+              image: '../public/image/TraceConsoleGoogle.png',
               descriptionGenerale: 'La trace n°3 montre les outils de développement de Chrome ouverts sur l\'application MAESTRO. À droite, l\'arbre HTML de l\'élément sélectionné ; en bas, le champ où je teste un XPath pour cibler cet élément. MAESTRO étant une Power App, c\'est-à-dire une application générée en low-code, son code HTML n\'est pas écrit à la main mais produit automatiquement par la plateforme. C\'est cette inspection qui constituait la première étape de tout test : avant de pouvoir piloter un élément (un bouton, un champ, une liste), je devais d\'abord savoir comment le désigner de façon fiable.',
               descriptifSavoirFaire: [
                 {
@@ -111,7 +111,7 @@ export const portfolioData = {
               numero: '4',
               titre: 'Wrapper d\'élément basé sur l\'attribut data-control-name',
               legende: 'Trace n°4 : méthode GetDataControlName que j\'ai codée pour générer un sélecteur court et réutilisable, et renvoyer un wrapper d\'élément.',
-              image: `${import.meta.env.BASE_URL}image/TraceIGraphicElement.png`,
+              image: '../public/image/TraceIGraphicElement.png',
               descriptionGenerale: 'La trace n°4 présente une méthode que j\'ai écrite, GetDataControlName. Elle se situe dans un fichier qui rassemble l\'ensemble des méthodes chargées de « wrapper » les éléments graphiques de l\'application, c\'est-à-dire de les localiser et de les encapsuler pour les rendre utilisables dans les tests. Elle prend en paramètre un texte et un index, construit un sélecteur XPath court à partir de l\'attribut data-control-name, et renvoie un WebElementWrapper : un objet qui encapsule l\'élément du navigateur ainsi qu\'un message de log décrivant l\'élément ciblé. Les commentaires au-dessus de la méthode montrent qu\'un même wrapper sert à cibler des éléments très différents (listes déroulantes, personnage « Nom du Resp. », etc.) selon le texte et l\'index passés.',
               descriptifSavoirFaire: [
                 {
@@ -128,7 +128,7 @@ export const portfolioData = {
               numero: '5',
               titre: 'Méthode de test automatisé avec le framework de l\'entreprise',
               legende: 'Trace n°5 : test automatisé ControleSuppressionJalon codé en C# selon le pattern Arrange / Act / Assert du framework de l\'entreprise.',
-              image: `${import.meta.env.BASE_URL}image/TraceTestVS.png`,
+              image: '../public/image/TraceTestVS.png',
               descriptionGenerale: 'La trace n°5 montre une méthode de test complète, ControleSuppressionJalon, qui vérifie que la suppression de jalons fonctionne dans MAESTRO. L\'annotation [Fact] déclare la méthode comme un test exécutable. Le test suit le pattern Arrange / Act / Assert structurant le framework de l\'entreprise : on prépare les données (Arrange), on effectue les actions de suppression (Act), puis on vérifie le résultat attendu (Assert). On y retrouve les helpers du framework (logHelper, actionHelper, assertHelper) et l\'objet iFramePage qui représente la page applicative.',
               descriptifSavoirFaire: [
                 {
@@ -138,6 +138,67 @@ export const portfolioData = {
                 {
                   titre: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
                   texte: 'La trace n°5 boucle la logique des trois traces : on y voit le wrapper GetDataControlName de la trace n°4 <strong class="c-teal">réellement mis en œuvre dans un test</strong>, ici pour cibler l\'icône de suppression d\'un jalon (« ico_delete_jalon », index 2). Ce qui était une méthode isolée dans la trace n°4 devient ici un outil concret au service d\'un cas de test, ce qui montre que le wrapper n\'est pas un exercice théorique mais une brique réutilisée au quotidien dans l\'écriture des tests.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Garantir la qualité du code par l\'analyse statique',
+          elementarySkills: [
+            {
+              name: 'Mettre en place l\'analyse SonarQube via un pipeline',
+              color: '#FF6B6B',
+              description: 'Écrire et configurer un pipeline déclenchant l\'analyse SonarQube à chaque modification de la branche develop.',
+            },
+            {
+              name: 'Interpréter les problèmes remontés et leur gradation',
+              color: '#4ECDC4',
+              description: 'Lire et hiérarchiser les problèmes par type et sévérité, et identifier leur origine.',
+            },
+            {
+              name: 'Corriger les problèmes de qualité du code',
+              color: '#FFB84D',
+              description: 'Traiter concrètement dans le code les problèmes révélés par l\'analyse.',
+            },
+            {
+              name: 'Suivre l\'évolution de la qualité dans le temps',
+              color: '#9B8CFF',
+              description: 'Lire la tendance de la qualité du code au fil des analyses successives.',
+            },
+          ],
+          traces: [
+            {
+              numero: '11',
+              titre: 'Problèmes de code remontés par l\'analyse SonarQube',
+              legende: 'Trace n°11 : liste des problèmes détectés par l\'analyse SonarQube sur le projet, avec leur type et leur sévérité.',
+              image: '../public/image/SonarQubProbleme.png',
+              descriptionGenerale: 'La trace n°11 montre l\'interface de SonarQube listant les problèmes détectés dans le code du projet. SonarQube est un outil d\'analyse statique : il examine le code sans l\'exécuter et signale les défauts de qualité. À gauche, les filtres permettent de trier les problèmes par type (bug, vulnérabilité, mauvaise pratique) et par sévérité (bloquant, critique, majeur, mineur). Au centre, chaque problème est affiché avec le fichier concerné, une description, sa sévérité et un temps de correction estimé. Cette analyse n\'était plus utilisée depuis longtemps sur le projet : c\'est moi qui l\'ai remise en service.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Mettre en place l\'analyse SonarQube via un pipeline',
+                  texte: 'Pour que ces problèmes apparaissent, il a d\'abord fallu <strong class="c-red">remettre en route l\'analyse de qualité du code, qui était à l\'arrêt depuis longtemps</strong>. J\'ai écrit et configuré, dans Azure DevOps, un pipeline déclenchant l\'analyse SonarQube à chaque modification de la branche develop. Le projet était relié à SonarQube mais n\'avait plus de pipeline fonctionnel : mon travail a consisté à recréer cette automatisation, de sorte que chaque évolution du code soit désormais analysée sans intervention manuelle. La trace n°11 est le résultat direct de cette mise en place : sans le pipeline, aucun de ces problèmes ne serait remonté.',
+                },
+                {
+                  titre: 'Interpréter les problèmes remontés et leur gradation',
+                  texte: 'La trace n°11 démontre aussi ma capacité à <strong class="c-teal">lire et hiérarchiser les problèmes signalés par l\'outil</strong>. Tous les problèmes n\'ont pas la même importance : SonarQube les classe par type et par sévérité, et il faut savoir distinguer un défaut mineur d\'un problème majeur à corriger en priorité. J\'ai également dû identifier l\'origine des problèmes : certains de ceux qui subsistent proviennent du code modèle ayant servi à générer le projet, et non de mon propre code — je prévois d\'ailleurs de les supprimer également. Savoir faire ce tri évite de corriger au hasard et permet de concentrer l\'effort là où il compte.',
+                },
+              ],
+            },
+            {
+              numero: '12',
+              titre: 'Évolution du nombre de problèmes dans le temps',
+              legende: 'Trace n°12 : graphique d\'activité de SonarQube montrant l\'évolution du nombre de problèmes du projet au fil des analyses.',
+              image: '../public/image/TraceSonarQubeActivite.png',
+              descriptionGenerale: 'La trace n°12 montre le graphique d\'activité de SonarQube, qui trace l\'évolution du nombre de problèmes du projet dans le temps. On y observe une longue période stable, puis une forte hausse — la pointe correspond au moment où j\'ai remis l\'analyse en service : le pipeline a alors révélé d\'un coup la trentaine de problèmes accumulés et jusque-là non détectés. La courbe redescend ensuite, à mesure que je corrigeais ces problèmes.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Corriger les problèmes de qualité du code',
+                  texte: 'La trace n°12 démontre ma capacité à <strong class="c-orange">traiter concrètement les problèmes remontés par l\'analyse</strong>. Une fois le pipeline en place, le projet affichait une trentaine de problèmes (la pointe du graphique). Je les ai corrigés un à un dans le code, ce qui se traduit par la redescente de la courbe. Cette trace est la preuve visuelle de mon action : je ne me suis pas contenté de mettre l\'outil en place et de constater les défauts, je les ai effectivement résorbés pour améliorer la qualité du code.',
+                },
+                {
+                  titre: 'Suivre l\'évolution de la qualité dans le temps',
+                  texte: 'La trace n°12 montre aussi que je savais <strong class="c-purple">lire la tendance de la qualité du code sur la durée</strong>. Le graphique d\'activité, complété par la liste des analyses successives en bas, permet de vérifier que chaque analyse fait bien baisser le nombre de problèmes et que les corrections produisent l\'effet attendu. Ce suivi dans le temps donne une vision de l\'évolution de la qualité, au-delà d\'un simple instantané, et permet de s\'assurer que le projet va dans le bon sens.',
                 },
               ],
             },
@@ -201,6 +262,43 @@ export const portfolioData = {
           levelBeforeText: 'En BUT, j\'avais pratiqué les tests unitaires et utilisé un outil comme Jenkins pour lancer des builds, mais je ne connaissais les tests de bout en bout que de nom. Je n\'avais jamais automatisé de test pilotant un navigateur, ni manipulé Selenium, ni testé une application aussi particulière qu\'une Power App.',
           levelAfterText: 'Je suis désormais capable d\'automatiser un test de bout en bout complet sur une application web exigeante : inspecter le DOM pour localiser un élément, concevoir une stratégie de ciblage robuste face à un code instable, et coder le test dans un framework structuré en gérant les contraintes réelles d\'exécution (temporisation, état de départ reproductible). Mon principal axe de progression reste la conception du framework lui-même : je l\'ai utilisé sans le faire évoluer, et c\'est une étape que j\'aimerais franchir.',
         },
+        {
+          skillName: 'Garantir la qualité du code par l\'analyse statique',
+          elementaryDetails: [
+            {
+              name: 'Mettre en place l\'analyse SonarQube via un pipeline',
+              context: 'Écriture et configuration, dans Azure DevOps, d\'un pipeline déclenchant l\'analyse SonarQube à chaque modification de la branche develop.',
+              learningContext: 'Découvert en stage ; je n\'avais jamais configuré de pipeline d\'analyse de qualité.',
+              difficulty: 'Moyen à élevé',
+            },
+            {
+              name: 'Interpréter les problèmes remontés et leur gradation',
+              context: 'Lecture des problèmes signalés, tri par type et sévérité, identification de leur origine (code modèle ou code propre).',
+              learningContext: 'Découvert en stage.',
+              difficulty: 'Faible à moyen',
+            },
+            {
+              name: 'Corriger les problèmes de qualité du code',
+              context: 'Résorption de la trentaine de problèmes révélés par la remise en service de l\'analyse.',
+              learningContext: 'Découvert en stage.',
+              difficulty: 'Moyen',
+            },
+            {
+              name: 'Suivre l\'évolution de la qualité dans le temps',
+              context: 'Lecture du graphique d\'activité et des analyses successives pour vérifier la baisse du nombre de problèmes.',
+              learningContext: 'Découvert en stage.',
+              difficulty: 'Faible',
+            },
+          ],
+          context: 'Mise en place et exploitation de l\'analyse statique SonarQube sur le projet MAESTRO chez APRR.',
+          learningContext: 'Compétence entièrement construite en stage, sur un projet où l\'analyse de qualité était à l\'arrêt.',
+          difficulty: 'Moyen',
+          level: 'Bon',
+          levelBefore: 'Faible',
+          levelAfter: 'Bon',
+          levelBeforeText: 'En formation, j\'avais entendu parler des outils d\'intégration continue et de la qualité de code, mais je n\'avais jamais mis en place d\'analyse statique, ni configuré de pipeline SonarQube, ni travaillé à partir des problèmes remontés par un tel outil.',
+          levelAfterText: 'Je sais désormais remettre en service et configurer une analyse SonarQube via un pipeline, interpréter les problèmes qu\'elle remonte en fonction de leur type et de leur sévérité, et les corriger pour améliorer la qualité du code, tout en suivant l\'évolution dans le temps. Il me reste cependant des points à traiter, que j\'ai identifiés mais pas encore résolus : les quelques problèmes hérités du code modèle, que je compte supprimer, et un taux de duplication du code que l\'analyse a mis en évidence. J\'ai compris l\'origine de ces duplications — des tests qui suivent la même logique d\'implémentation sur des écrans différents — et leur traitement est planifié. Cette lucidité sur ce qu\'il reste à faire fait elle-même partie de la compétence.',
+        },
       ],
     },
     suiviProjet: {
@@ -236,7 +334,7 @@ export const portfolioData = {
               numero: '6',
               titre: 'Documentation à destination du métier',
               legende: 'Trace n°6 : page de wiki « Procédure d\'un lancement de test sur Azure Test Plans », rédigée pour permettre au métier de lancer lui-même une campagne de test.',
-              image: `${import.meta.env.BASE_URL}image/TraceDocMetier.png`,
+              image: '../public/image/TraceDocMetier.png',
               descriptionGenerale: 'La trace n°6 montre une page du wiki que j\'ai rédigée, intitulée « Procédure d\'un lancement de test sur Azure Test Plans ». Lorsque je suis arrivé sur le projet, il n\'existait aucune documentation : je suis donc parti de zéro, en m\'inspirant de ce qui se faisait sur d\'autres projets de l\'entreprise. Cette page-ci s\'adresse au métier : elle décrit, étape par étape et captures à l\'appui, comment se rendre dans Azure Test Plans et déclencher l\'exécution des tests, sans avoir besoin de compétences techniques.',
               descriptifSavoirFaire: [
                 {
@@ -253,7 +351,7 @@ export const portfolioData = {
               numero: '7',
               titre: 'Documentation technique pour les développeurs',
               legende: 'Trace n°7 : page de wiki « Documentation Technique » présentant et commentant le code des tests, à destination des développeurs.',
-              image: `${import.meta.env.BASE_URL}image/TraceDocTechnique.png`,
+              image: '../public/image/TraceDocTechnique.png',
               descriptionGenerale: 'La trace n°7 montre une autre partie du wiki que j\'ai rédigée, la « Documentation Technique ». Contrairement à la précédente, elle s\'adresse aux développeurs qui reprendront ou maintiendront les tests. On y trouve une arborescence de pages (README, Introduction, Architecture, Tests Web, Automatisation d\'un test, Explication des tests) et, pour chaque test, le code commenté accompagné d\'une explication du déroulé.',
               descriptifSavoirFaire: [
                 {
@@ -270,7 +368,7 @@ export const portfolioData = {
               numero: '8',
               titre: 'Suivi de ses tâches dans l\'outil de gestion de projet',
               legende: 'Trace n°8 : écran « Plan d\'actions » de l\'application MAESTRO, outil partagé où je renseignais et suivais mes propres tâches.',
-              image: `${import.meta.env.BASE_URL}image/TraceMAESTROActions.png`,
+              image: '../public/image/TraceMAESTROActions.png',
               descriptionGenerale: 'La trace n°8 montre l\'écran « Plan d\'actions » de MAESTRO. Particularité du projet : l\'application que je testais servait aussi d\'outil de gestion partagé pour le suivi du projet. Je testais MAESTRO sur son environnement de préproduction, mais c\'est la version en production qui était utilisée au quotidien comme outil de pilotage. Dans cet écran, chaque ligne est une action, avec un responsable, une priorité, un statut et des dates. On y voit plusieurs actions qui me sont assignées (Gautier BELEY), aux côtés de celles d\'autres membres du projet. La fenêtre ouverte au centre est une note que j\'ai rédigée sur l\'une de mes actions, pour détailler ce qui allait être réalisé (ici, le développement des tests de plusieurs écrans) et renvoyer vers le fichier de suivi correspondant.',
               descriptifSavoirFaire: [
                 {
@@ -355,7 +453,7 @@ export const portfolioData = {
               numero: '9',
               titre: 'Déclaration des perturbations rencontrées',
               legende: 'Trace n°9 : écran « Perturbations » de MAESTRO, où j\'ai déclaré les problèmes rencontrés lors de l\'écriture et de l\'exécution des tests.',
-              image: `${import.meta.env.BASE_URL}image/TracePerturbations.png`,
+              image: '../public/image/TracePerturbations.png',
               descriptionGenerale: 'La trace n°9 montre l\'écran « Perturbations » de MAESTRO. Une perturbation est un problème qui empêche ou complique la réalisation d\'un test : bug applicatif, manque, dépendance technique… Pendant mon stage, je détectais ce type de problèmes à deux moments : lors de l\'implémentation d\'un test, quand je vérifiais le scénario, et lors de l\'exécution des tests, quand un test échouait à cause d\'un comportement anormal de l\'application. Deux des perturbations affichées sont de moi (les problèmes liés au bouton d\'accès aux fiches projets et au manuel d\'utilisateur) ; j\'en ai remonté d\'autres directement par Teams. Chaque perturbation est décrite par sa nature, son impact, sa date et son auteur.',
               descriptifSavoirFaire: [
                 {
@@ -372,7 +470,7 @@ export const portfolioData = {
               numero: '10',
               titre: 'Travail sur le dépôt de code partagé',
               legende: 'Trace n°10 : vue des branches du dépôt Azure DevOps et historique des pull requests, montrant mon travail sur le code partagé du projet.',
-              image: `${import.meta.env.BASE_URL}image/TraceBranchesGit.png`,
+              image: '../public/image/TraceBranchesGit.png',
               descriptionGenerale: 'La trace n°10 montre le dépôt Azure DevOps du projet : à gauche, la liste des branches ; au centre, l\'historique des commits et des pull requests. Le projet s\'organise autour d\'une branche main, d\'une branche develop (la branche par défaut) et de nombreuses branches feature. Mes branches apparaissent sous « Mine » (feature/SeparationTests, feature/testJalons&Livrables), au milieu de celles des autres membres du projet. L\'historique montre une succession de pull requests que j\'ai créées et fusionnées, avec leur statut de build (réussi ou échoué).',
               descriptifSavoirFaire: [
                 {
@@ -430,4 +528,3 @@ export const portfolioData = {
     },
   },
 }
- 

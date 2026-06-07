@@ -99,7 +99,7 @@ const currentGeneral = computed(() => {
 
 <style scoped>
 .page-container {
-  max-width: 1000px;
+  width: min(1400px, 96vw);
   margin: 0 auto;
 }
 

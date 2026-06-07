@@ -119,7 +119,7 @@ const sections = [
 
 <style scoped>
 .accueil-page {
-  max-width: 1200px;
+  width: min(1400px, 96vw);
   margin: 0 auto;
 }
 

@@ -13,130 +13,133 @@ export const portfolioData = {
           name: 'Concevoir un cas de test répondant à un besoin métier',
           elementarySkills: [
             {
-              name: 'Rédiger un cas de test avec la bonne norme',
+              name: 'Décomposer une fonctionnalité en étapes de test atomiques',
               color: '#FF6B6B',
-              description: 'Choisir des sélecteurs robustes pour cibler les éléments de l’interface.',
+              description: 'Traduire chaque fonctionnalité d\'un écran en une suite d\'étapes (action / résultat attendu) vérifiables et sans ambiguïté.',
             },
             {
-              name: 'Créer un Test Plan via un cas de test',
+              name: 'Rédiger un cas de test au formalisme importable d\'Azure DevOps',
               color: '#4ECDC4',
-              description: 'Écrire des parcours utilisateurs clairs (connexion, navigation, erreurs).',
+              description: 'Respecter les colonnes attendues par le module Test Plans pour qu\'un fichier Excel soit reconnu à l\'import.',
+            },
+            {
+              name: 'Organiser les cas de test en suites thématiques',
+              color: '#FFB84D',
+              description: 'Regrouper les cas de test par écran de l\'application pour une couverture lisible et maintenable.',
+            },
+            {
+              name: 'Versionner les campagnes de test',
+              color: '#9B8CFF',
+              description: 'Construire des plans de test incrémentaux par version pour historiser ce qui a été validé avant chaque déploiement.',
             },
           ],
           traces: [
             {
               numero: '1',
-              titre: 'Cas de teste au formalisme Azure DevOps',
-              legende: 'J\'ai rédigé ce cas de test après discussion avec le métier et après analyse des fonctionnalité du site. Un cas de test représente un chemin utilisateur, il va ensuite représenter un test.',
-              image:'../public/image/TraceCasDeTest.png'
-
+              titre: 'Cas de test au formalisme Azure DevOps',
+              legende: 'Trace n°1 : cas de test « Contrôle visuellement les Jalons » rédigé sous Excel au formalisme attendu par Azure DevOps Test Plans.',
+              image: '../public/image/TraceCasDeTest.png',
+              descriptionGenerale: 'La trace n°1 est une copie d\'écran d\'un de mes cas de test, rédigé dans un fichier Excel. À mon arrivée chez APRR, j\'ai d\'abord pris connaissance des écrans de l\'application MAESTRO déjà testés, puis mon tuteur, qui porte la vision métier, m\'a indiqué les écrans qu\'il souhaitait voir couverts. Pour chaque écran, je rédigeais un fichier Excel regroupant l\'ensemble des cas de test couvrant ses fonctionnalités. Le cas de test présenté dans la trace n°1 concerne l\'écran « Jalons &amp; Livrables » et vérifie l\'affichage correct des jalons. Chaque ligne décrit une étape : une action utilisateur dans la colonne <em>Step Action</em> et le résultat attendu correspondant dans la colonne <em>Step Expected</em>.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Décomposer une fonctionnalité en étapes de test atomiques',
+                  texte: 'La première difficulté n\'était pas d\'imaginer les scénarios, mais de <strong class="c-red">décomposer chaque fonctionnalité de l\'écran en une suite d\'étapes atomiques</strong>, où chaque action s\'accompagne d\'un résultat attendu vérifiable et sans ambiguïté. Pour le cas « Contrôle visuellement les Jalons » de la trace n°1, cela m\'a amené à vérifier successivement la présence des jalons que le test crée lui-même au préalable, leur ordre d\'affichage, la cohérence des données et l\'intitulé des colonnes du tableau applicatif. Ce découpage fin est essentiel car chaque étape deviendra plus tard une assertion dans le test automatisé : une étape mal définie produit un test infidèle.',
+                },
+                {
+                  titre: 'Rédiger un cas de test au formalisme importable d\'Azure DevOps',
+                  texte: 'Au-delà du contenu, la trace n°1 montre la contrainte de forme. Le fichier Excel devait <strong class="c-teal">respecter des colonnes précises pour être reconnu à l\'import par le module Test Plans</strong>. Lors de ma première injection dans Azure DevOps, j\'ai dû ajouter au fichier les colonnes attendues par l\'outil, comme <em>Area Path</em> ou <em>Test Step</em>, sans quoi l\'import échouait. Ce savoir-faire illustre le passage d\'un besoin exprimé oralement par le métier à un document structuré, normé et directement exploitable par la machine.',
+                },
+              ],
             },
             {
               numero: '2',
-              titre: 'Création des tests plans et implémentation des cas de test',
-              legende: 'J\ai créé des Tests Plans pour pouvoir rassembler les cas de test et créer des campagnes de test par version. Cela a pour but de créer un historique des anciens tests effectués',
-              image:'../public/image/TraceTestPlans.png'
+              titre: 'Organisation des cas de test en Test Plans versionnés',
+              legende: 'Trace n°2 : arborescence des Test Plans dans Azure DevOps, organisés par version de MAESTRO et par suites thématiques.',
+              image: '../public/image/TraceTestPlans.png',
+              descriptionGenerale: 'La trace n°2 montre le module Test Plans d\'Azure DevOps, où sont regroupés et organisés tous les cas de test que j\'ai rédigés. Une fois un fichier Excel validé par le métier, je l\'injectais dans Azure DevOps, ce qui créait les cas de test correspondants. Je les rangeais ensuite dans une arborescence à deux niveaux : par version de l\'application et, à l\'intérieur, par suites thématiques correspondant aux écrans.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Organiser les cas de test en suites thématiques',
+                  texte: 'Dans la trace n°2, <strong class="c-orange">chaque écran de MAESTRO correspond à une suite</strong> (Jalons &amp; Livrables, Perturbations, Gestion des risques, Plan d\'actions…). Ce regroupement prolonge la logique de la trace n°1, où un fichier Excel correspondait déjà à un écran : la cohérence entre la phase de rédaction et la phase d\'organisation rend l\'ensemble lisible et facile à maintenir. On retrouve dans le volet de gauche le compteur de cas par suite, qui donne une vue immédiate de la couverture de chaque écran.',
+                },
+                {
+                  titre: 'Versionner les campagnes de test',
+                  texte: 'L\'organisation par version répondait à un besoin métier explicite : conserver un historique des versions testées du site, chaque version devant passer une campagne de tests automatisés avant son déploiement. J\'ai donc <strong class="c-purple">structuré les plans de façon incrémentale</strong> : le plan « MAESTRO V1.7 » reprend l\'intégralité des tests de la V1.6 et y ajoute ceux des nouvelles fonctionnalités, tandis qu\'un plan « Tests » rassemble l\'ensemble des tests existants. Cette structure permet de rejouer une campagne complète à chaque montée de version et de savoir précisément ce qui a été validé pour chaque livraison.',
+                },
+              ],
             },
           ],
         },
         {
-          name: 'Concevoir des tests de bout en bout pour une application web',
+          name: 'Automatiser des tests de bout en bout pour une application web',
           elementarySkills: [
             {
-              name: 'Savoir utiliser le framework de l\'entreprise',
-              color: '#96CEB4',
-              description: 'Structurer l’UI en composants cohérents et maintenables.',
+              name: 'Localiser des éléments graphiques sur une application low-code instable',
+              color: '#FF6B6B',
+              description: 'Trouver un point d\'ancrage fiable dans le DOM généré et mouvant d\'une Power App.',
             },
             {
-              name: 'Créer des méthodes de tests Selenium',
-              color: '#C7CEEA',
-              description: 'Mettre en place une navigation claire et hiérarchisée.',
+              name: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
+              color: '#4ECDC4',
+              description: 'Encapsuler la localisation des éléments dans des méthodes courtes, réutilisables et résistantes aux évolutions de l\'interface.',
             },
             {
-              name: 'Journaliser son code',
-              color: '#C7CEEA',
-              description: 'Mettre en place une navigation claire et hiérarchisée.',
+              name: 'Coder un test automatisé avec le framework de l\'entreprise',
+              color: '#FFB84D',
+              description: 'Écrire un test de bout en bout selon le pattern Arrange / Act / Assert en mobilisant les helpers du framework.',
             },
           ],
           traces: [
             {
               numero: '3',
-              titre: 'Méthodes de test en c# via le framework de l\'entreprise',
-              legende: 'L\'appellation [Fact] sert a déclarer la class comme étant de type test. Le test ce consitue en plusieurs parties : Nettoyage des données et Déroulement des tests',
-              image: '../public/image/TraceFrameWorkNormeEntreprise.png'
+              titre: 'Inspection du DOM d\'une application Power Platform',
+              legende: 'Trace n°3 : inspection via les outils de développement de Chrome d\'un élément de MAESTRO, application développée en low-code (Power Platform).',
+              image: '../public/image/TraceConsoleGoogle.png',
+              descriptionGenerale: 'La trace n°3 montre les outils de développement de Chrome ouverts sur l\'application MAESTRO. À droite, l\'arbre HTML de l\'élément sélectionné ; en bas, le champ où je teste un XPath pour cibler cet élément. MAESTRO étant une Power App, c\'est-à-dire une application générée en low-code, son code HTML n\'est pas écrit à la main mais produit automatiquement par la plateforme. C\'est cette inspection qui constituait la première étape de tout test : avant de pouvoir piloter un élément (un bouton, un champ, une liste), je devais d\'abord savoir comment le désigner de façon fiable.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Localiser des éléments graphiques sur une application low-code instable',
+                  texte: 'La trace n°3 illustre la principale difficulté technique de mon stage : sur une Power App, la plateforme <strong class="c-red">génère une arborescence HTML incontrôlable</strong>, où un simple bouton peut être enfoui sous une cinquantaine de balises imbriquées, avec des noms de classes aléatoires et des éléments parfois non interactables. Copier directement le XPath proposé par le navigateur produit un chemin interminable, illisible, et surtout fragile : la moindre modification d\'un écran change l\'imbrication et casse tous les XPath récupérés auparavant. Identifier un point d\'ancrage stable dans ce DOM mouvant était donc un travail à part entière, et la condition pour que les tests ne se cassent pas à la première évolution de l\'application.',
+                },
+                {
+                  titre: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
+                  texte: 'La trace n°3 motive directement la trace n°4 : c\'est en constatant l\'instabilité de ce DOM que j\'ai compris qu\'il fallait <strong class="c-teal">une stratégie de localisation plus robuste qu\'un XPath brut</strong>. Plutôt que de coller des chemins absolus dans chaque test, j\'ai cherché un attribut stable sur lequel m\'appuyer, ce qui m\'a conduit à la solution présentée dans la trace suivante.',
+                },
+              ],
             },
             {
               numero: '4',
-              titre: 'Système de navigation',
-              legende: 'Mise en place de routes et d’un menu cohérent.',
+              titre: 'Wrapper d\'élément basé sur l\'attribut data-control-name',
+              legende: 'Trace n°4 : méthode GetDataControlName que j\'ai codée pour générer un sélecteur court et réutilisable, et renvoyer un wrapper d\'élément.',
+              image: '../public/image/TraceIGraphicElement.png',
+              descriptionGenerale: 'La trace n°4 présente une méthode que j\'ai écrite, GetDataControlName. Elle se situe dans un fichier qui rassemble l\'ensemble des méthodes chargées de « wrapper » les éléments graphiques de l\'application, c\'est-à-dire de les localiser et de les encapsuler pour les rendre utilisables dans les tests. Elle prend en paramètre un texte et un index, construit un sélecteur XPath court à partir de l\'attribut data-control-name, et renvoie un WebElementWrapper : un objet qui encapsule l\'élément du navigateur ainsi qu\'un message de log décrivant l\'élément ciblé. Les commentaires au-dessus de la méthode montrent qu\'un même wrapper sert à cibler des éléments très différents (listes déroulantes, personnage « Nom du Resp. », etc.) selon le texte et l\'index passés.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
+                  texte: 'La trace n°4 est ma réponse au problème posé par la trace n°3. Plutôt que de dépendre d\'un chemin absolu fragile, je m\'appuie sur l\'attribut data-control-name, qui reste stable même quand l\'imbrication des balises change. GetDataControlName n\'est qu\'un exemple parmi l\'ensemble des wrappers que j\'ai regroupés dans ce fichier dédié : selon les besoins des tests, ces méthodes <strong class="c-teal">ciblent aussi bien la détection d\'un émoji que celle d\'un bouton poubelle</strong> ou de tout autre élément de l\'interface. Pour moi, un wrapper « optimisé » répond à trois critères que ces méthodes remplissent : elles produisent <strong class="c-teal">un sélecteur court, donc bien moins sensible aux évolutions de l\'application</strong> ; elles sont <strong class="c-teal">réutilisables</strong>, puisqu\'un même appel cible de nombreux éléments différents selon ses paramètres ; et elles couvrent un grand nombre de cas sans qu\'il faille écrire un sélecteur à la main pour chacun. Cette réutilisabilité n\'est pas qu\'une intention : <strong class="c-teal">Visual Studio indique plus de 99 références à cette seule méthode</strong> dans le code, ce qui prouve qu\'elle est effectivement appelée dans l\'ensemble des tests. C\'est ce qui rend la suite de tests maintenable dans la durée : corriger la façon de cibler un élément se fait à un seul endroit, et bénéficie à tous les tests.',
+                },
+                {
+                  titre: 'Localiser des éléments graphiques sur une application low-code instable',
+                  texte: 'La trace n°4 montre aussi l\'aboutissement du travail de localisation entamé dans la trace n°3 : le wrapper <strong class="c-red">transforme une localisation fragile en une localisation fiable et nommée</strong>. Le message de log retourné (« {text} {index} détecté ») rend en plus chaque ciblage traçable lors de l\'exécution, ce qui facilite le diagnostic quand un test échoue.',
+                },
+              ],
             },
-          ],
-        },
-        {
-          name: 'Manipuler des éléments graphiques pour un environnement de test',
-          elementarySkills: [
-            {
-              name: 'Récupérer les chemins des éléments graphiques optimisés',
-              color: '#96CEB4',
-              description: 'Structurer l’UI en composants cohérents et maintenables.',
-            },
-            {
-              name: 'Créer des wrappeurs d`éléments graphiques Web',
-              color: '#C7CEEA',
-              description: 'Mettre en place une navigation claire et hiérarchisée.',
-            },
-            {
-              name: 'Design system',
-              color: '#FCCB7E',
-              description: 'Appliquer des styles et des règles visuelles homogènes.',
-            },
-          ],
-          traces: [
             {
               numero: '5',
-              titre: 'Récupération d\'un élément graphique depuis une page Web',
-              legende: 'Cette trace montre comment récupérer le lien d\'un élément graphique Web, en créant son selector.Mais, il faut que le selector soit optimal et réutilisable, pouvoir être utiliser sur différent élément.',
-              image: '../public/image/TraceConsoleGoogle.png'
-
-            },
-            {
-              numero: '6',
-              titre: 'Stockage des éléments graphiques',
-              legende: 'Création d\'un fichier spécifique pour stocker tous les éléments. Cette méthode de récupération car elle a plus de 99 appels ce qui la rend très efficace et optimal.',
-              image: '../public/image/TraceIGraphicElement.png'
-
-            },
-          ],
-        },
-        {
-          name: 'Être capable d\'automatiser des tests web',
-          elementarySkills: [
-            {
-              name: 'Lier les tests codés au dépôts Azure DevOps',
-              color: '#96CEB4',
-              description: 'Structurer l’UI en composants cohérents et maintenables.',
-            },
-            {
-              name: 'Exécuter les tests automatisés sur une machine virtuelle',
-              color: '#C7CEEA',
-              description: 'Mettre en place une navigation claire et hiérarchisée.',
-            },
-
-          ],
-          traces: [
-            {
-              numero: '7',
-              titre: 'Association des tests développés au cas de test associé',
-              legende: 'Une fois le test implémenté et fonctionnel, il faut le lier à son cas de test pour pouvoir le lancer depuis Azure DevOps. On les lie en les connectants via l\'ID du cas de test',
-              image: '../public/image/TraceAssociationTest.png'
-
-            },
-            {
-              numero: '8',
-              titre: 'Lancement du test automatisé',
-              legende: 'Quand le test est automatisé, il faut le lancer sur la VM, et on a un compte rendu sur l\'exécution du test parties par parties ',
-              image: '../public/image/TraceTestRun.png'
-
+              titre: 'Méthode de test automatisé avec le framework de l\'entreprise',
+              legende: 'Trace n°5 : test automatisé ControleSuppressionJalon codé en C# selon le pattern Arrange / Act / Assert du framework de l\'entreprise.',
+              image: '../public/image/TraceTestVS.png',
+              descriptionGenerale: 'La trace n°5 montre une méthode de test complète, ControleSuppressionJalon, qui vérifie que la suppression de jalons fonctionne dans MAESTRO. L\'annotation [Fact] déclare la méthode comme un test exécutable. Le test suit le pattern Arrange / Act / Assert structurant le framework de l\'entreprise : on prépare les données (Arrange), on effectue les actions de suppression (Act), puis on vérifie le résultat attendu (Assert). On y retrouve les helpers du framework (logHelper, actionHelper, assertHelper) et l\'objet iFramePage qui représente la page applicative.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Coder un test automatisé avec le framework de l\'entreprise',
+                  texte: 'La trace n°5 démontre ma capacité à <strong class="c-orange">écrire un test de bout en bout structuré selon le pattern Arrange / Act / Assert</strong>. Le test commence par régénérer un jeu de données témoin (CreerJeuDeDonnees), de sorte qu\'il parte toujours d\'un état connu et puisse être rejoué de façon fiable. Il enchaîne ensuite les actions sur l\'interface, puis se termine par une assertion qui compare l\'état obtenu à l\'état attendu. On remarque aussi les appels ThenWait, indispensables sur MAESTRO : les temps de réponse de la Power App étant imprévisibles, il faut <strong class="c-orange">temporiser explicitement entre les actions</strong> pour laisser l\'interface se mettre à jour, sans quoi le test agirait trop tôt et échouerait à tort.',
+                },
+                {
+                  titre: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
+                  texte: 'La trace n°5 boucle la logique des trois traces : on y voit le wrapper GetDataControlName de la trace n°4 <strong class="c-teal">réellement mis en œuvre dans un test</strong>, ici pour cibler l\'icône de suppression d\'un jalon (« ico_delete_jalon », index 2). Ce qui était une méthode isolée dans la trace n°4 devient ici un outil concret au service d\'un cas de test, ce qui montre que le wrapper n\'est pas un exercice théorique mais une brique réutilisée au quotidien dans l\'écriture des tests.',
+                },
+              ],
             },
           ],
         },
@@ -168,97 +171,35 @@ export const portfolioData = {
           levelAfterText: 'Capable de créer différents cas de test pour différents écrans avec le formalisme d\'Azure DevOps',
         },
         {
-          skillName: 'Concevoir des tests de bout en bout pour une application web',
+          skillName: 'Automatiser des tests de bout en bout pour une application web',
           elementaryDetails: [
             {
-              name: 'Composants',
-              context: 'Decouper les ecrans en blocs reutilisables.',
-              learningContext: 'Vu en cours puis applique en projet.',
-              difficulty: 'Moyen',
+              name: 'Localiser des éléments graphiques sur une application low-code instable',
+              context: 'Identification de points d\'ancrage fiables dans le DOM généré et mouvant de MAESTRO, pour chaque élément à piloter.',
+              learningContext: 'Découvert en stage ; j\'avais des bases en HTML mais je n\'avais jamais affronté un DOM aussi instable.',
+              difficulty: 'Élevé',
             },
             {
-              name: 'Routing',
-              context: 'Navigation entre les pages et sections.',
-              learningContext: 'Appris en cours, renforce en pratique.',
-              difficulty: 'Moyen',
+              name: 'Concevoir des wrappers d\'éléments réutilisables et robustes',
+              context: 'Écriture des méthodes de ciblage d\'éléments (wrappers) produisant des sélecteurs courts, réutilisables et résistants aux évolutions de l\'interface ; la méthode GetDataControlName montrée dans la trace n°4 en est un exemple représentatif parmi l\'ensemble de ceux que j\'ai implémentés.',
+              learningContext: 'Découvert en stage, en réponse directe au problème de localisation.',
+              difficulty: 'Moyen à élevé',
             },
             {
-              name: 'Design system',
-              context: 'Harmoniser les styles et composants UI.',
-              learningContext: 'Appris lors du portfolio.',
-              difficulty: 'Faible',
+              name: 'Coder un test automatisé avec le framework de l\'entreprise',
+              context: 'Rédaction des méthodes de test en C# selon le pattern Arrange / Act / Assert, en mobilisant les helpers du framework et en gérant les temporisations propres à la Power App.',
+              learningContext: 'Le framework existait déjà (développé par l\'alternant présent avant moi) ; je l\'ai pris en main et utilisé, sans le modifier, mais en discutant de pistes d\'amélioration avec l\'alternant qui travaille avec moi.',
+              difficulty: 'Moyen',
             },
           ],
-          context: 'Utilisation de Vue 3 pour la gestion d\'état et des composants',
-          learningContext: 'Appris en cours avec pratique intensive',
-          difficulty: 'Moyen',
+          context: 'Automatisation de tests de bout en bout sur MAESTRO, application web développée en low-code (Power Platform).',
+          learningContext: 'Compétence entièrement construite lors du stage sur une application particulièrement difficile à automatiser.',
+          difficulty: 'Élevé',
           level: 'Bon',
-          levelBefore: 'Mauvais',
+          levelBefore: 'Faible',
           levelAfter: 'Bon',
-          levelBeforeText: 'Difficulte a structurer les composants et routes.',
-          levelAfterText: 'Mise en place claire des vues et navigation.',
-        },
-        {
-          skillName: 'Manipuler des éléments graphiques pour un environnement de test',
-          elementaryDetails: [
-            {
-              name: 'Mise en page adaptable',
-              context: 'Ajuster les grilles et espacements.',
-              learningContext: 'Vu en cours puis teste sur le portfolio.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Priorisation mobile',
-              context: 'Organiser les contenus pour petits ecrans.',
-              learningContext: 'Appris par pratique personnelle.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Lisibilite',
-              context: 'Assurer une lecture confortable sur mobile.',
-              learningContext: 'Appris en cours et par retours utilisateurs.',
-              difficulty: 'Faible',
-            },
-          ],
-          context: 'Adaptation de l\'interface pour différentes tailles d\'écran',
-          learningContext: 'Compétence acquise progressivement lors des projets web',
-          difficulty: 'Faible',
-          level: 'Excellent',
-          levelBefore: 'Moyen',
-          levelAfter: 'Excellent',
-          levelBeforeText: 'Adaptations ponctuelles sans methode.',
-          levelAfterText: 'Ajustements systematiques et verification multi-ecrans.',
-        },
-        {
-          skillName: 'Être capable d\'automatiser des tests web',
-          elementaryDetails: [
-            {
-              name: 'Mise en page adaptable',
-              context: 'Ajuster les grilles et espacements.',
-              learningContext: 'Vu en cours puis teste sur le portfolio.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Priorisation mobile',
-              context: 'Organiser les contenus pour petits ecrans.',
-              learningContext: 'Appris par pratique personnelle.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Lisibilite',
-              context: 'Assurer une lecture confortable sur mobile.',
-              learningContext: 'Appris en cours et par retours utilisateurs.',
-              difficulty: 'Faible',
-            },
-          ],
-          context: 'Adaptation de l\'interface pour différentes tailles d\'écran',
-          learningContext: 'Compétence acquise progressivement lors des projets web',
-          difficulty: 'Faible',
-          level: 'Excellent',
-          levelBefore: 'Moyen',
-          levelAfter: 'Excellent',
-          levelBeforeText: 'Adaptations ponctuelles sans methode.',
-          levelAfterText: 'Ajustements systematiques et verification multi-ecrans.',
+          levelBeforeText: 'En BUT, j\'avais pratiqué les tests unitaires et utilisé un outil comme Jenkins pour lancer des builds, mais je ne connaissais les tests de bout en bout que de nom. Je n\'avais jamais automatisé de test pilotant un navigateur, ni manipulé Selenium, ni testé une application aussi particulière qu\'une Power App.',
+          levelAfterText: 'Je suis désormais capable d\'automatiser un test de bout en bout complet sur une application web exigeante : inspecter le DOM pour localiser un élément, concevoir une stratégie de ciblage robuste face à un code instable, et coder le test dans un framework structuré en gérant les contraintes réelles d\'exécution (temporisation, état de départ reproductible). Mon principal axe de progression reste la conception du framework lui-même : je l\'ai utilisé sans le faire évoluer, et c\'est une étape que j\'aimerais franchir.',
         },
       ],
     },
@@ -267,195 +208,117 @@ export const portfolioData = {
       resume: 'Présentation de votre capacité à suivre et gérer des projets, planifier et organiser le travail.',
       generalSkills: [
         {
-          name: 'Collaborer sur du code via Azure DevOps',
+          name: 'Documenter et suivre son travail',
           elementarySkills: [
             {
-              name: 'Planification',
-              color: '#FFE66D',
-              description: 'Découper le projet en phases avec des objectifs mesurables.',
+              name: 'Synthétiser un travail réalisé',
+              color: '#4ECDC4',
+              description: 'Prendre du recul sur son travail, le structurer et le hiérarchiser avant de le rédiger.',
             },
             {
-              name: 'Priorisation',
-              color: '#95E1D3',
-              description: 'Classer les tâches selon l’impact et l’urgence.',
+              name: 'Vulgariser une procédure pour le métier',
+              color: '#FF6B6B',
+              description: 'Rendre une procédure technique accessible et exécutable par un public non-développeur.',
             },
             {
-              name: 'Suivi d’avancement',
-              color: '#C7CEEA',
-              description: 'Mettre à jour l’état des tâches et gérer les écarts.',
+              name: 'Documenter techniquement pour les développeurs',
+              color: '#FFB84D',
+              description: 'Transmettre le détail du code et de l\'architecture à ceux qui reprendront le travail.',
+            },
+            {
+              name: 'Suivre ses tâches dans un outil de gestion de projet',
+              color: '#9B8CFF',
+              description: 'Renseigner et tenir à jour ses tâches (priorité, statut, échéances) dans l\'outil partagé du projet.',
             },
           ],
           traces: [
             {
-              numero: '1',
-              titre: 'Planning de projet',
-              legende: 'Organisation des étapes et estimation des charges.',
+              numero: '6',
+              titre: 'Documentation à destination du métier',
+              legende: 'Trace n°6 : page de wiki « Procédure d\'un lancement de test sur Azure Test Plans », rédigée pour permettre au métier de lancer lui-même une campagne de test.',
+              image: '../public/image/TraceDocMetier.png',
+              descriptionGenerale: 'La trace n°6 montre une page du wiki que j\'ai rédigée, intitulée « Procédure d\'un lancement de test sur Azure Test Plans ». Lorsque je suis arrivé sur le projet, il n\'existait aucune documentation : je suis donc parti de zéro, en m\'inspirant de ce qui se faisait sur d\'autres projets de l\'entreprise. Cette page-ci s\'adresse au métier : elle décrit, étape par étape et captures à l\'appui, comment se rendre dans Azure Test Plans et déclencher l\'exécution des tests, sans avoir besoin de compétences techniques.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Vulgariser une procédure pour le métier',
+                  texte: 'La trace n°6 démontre ma capacité à <strong class="c-red">rendre une procédure technique accessible à un public non-développeur</strong>. L\'enjeu n\'était pas de décrire comment les tests fonctionnent, mais de permettre à une personne du métier de les lancer en toute autonomie. J\'ai donc découpé la procédure en étapes simples et numérotées, illustrées par des captures d\'écran, en évitant le vocabulaire technique inutile. Le critère de réussite était clair : quelqu\'un qui ne connaît pas l\'outil doit pouvoir suivre la page sans aide.',
+                },
+                {
+                  titre: 'Synthétiser un travail réalisé',
+                  texte: 'Avant de documenter, il fallait <strong class="c-teal">prendre du recul sur la manipulation que je faisais moi-même au quotidien et la formaliser</strong>. Une procédure que l\'on exécute machinalement n\'est pas évidente à expliquer : il faut identifier chaque étape réellement nécessaire, dans le bon ordre, et n\'en oublier aucune. Cette mise à plat est un travail de synthèse qui précède toute rédaction.',
+                },
+              ],
             },
             {
-              numero: '2',
-              titre: 'Suivi hebdomadaire',
-              legende: 'Tableau d’avancement avec actions correctives.',
-            },
-          ],
-        },
-        {
-          name: 'Rédiger une documentation technique',
-          elementarySkills: [
-            {
-              name: 'Compte-rendu',
-              color: '#FCCB7E',
-              description: 'Rédiger des synthèses claires pour les parties prenantes.',
-            },
-            {
-              name: 'Gestion des retours',
-              color: '#A8D8EA',
-              description: 'Intégrer les feedbacks et ajuster la trajectoire.',
+              numero: '7',
+              titre: 'Documentation technique pour les développeurs',
+              legende: 'Trace n°7 : page de wiki « Documentation Technique » présentant et commentant le code des tests, à destination des développeurs.',
+              image: '../public/image/TraceDocTechnique.png',
+              descriptionGenerale: 'La trace n°7 montre une autre partie du wiki que j\'ai rédigée, la « Documentation Technique ». Contrairement à la précédente, elle s\'adresse aux développeurs qui reprendront ou maintiendront les tests. On y trouve une arborescence de pages (README, Introduction, Architecture, Tests Web, Automatisation d\'un test, Explication des tests) et, pour chaque test, le code commenté accompagné d\'une explication du déroulé.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Documenter techniquement pour les développeurs',
+                  texte: 'La trace n°7 démontre ma capacité à <strong class="c-orange">transmettre le détail technique de mon travail à des personnes qui devront le comprendre et le faire évoluer</strong>. Ici, le registre est inverse de celui de la trace n°6 : le vocabulaire technique est non seulement permis mais nécessaire, et le niveau de détail beaucoup plus fin (architecture, fonctionnement précis de chaque test, commentaires dans le code). C\'est une documentation de transmission, pensée pour qu\'un développeur puisse reprendre les tests sans repartir de zéro.',
+                },
+                {
+                  titre: 'Synthétiser un travail réalisé',
+                  texte: 'Comme pour la trace n°6, documenter le code supposait d\'abord de <strong class="c-teal">structurer et hiérarchiser l\'information</strong> : décider quoi expliquer, dans quel ordre, et à quel niveau de détail. L\'arborescence des pages (de l\'introduction générale jusqu\'à l\'explication d\'un test précis) est elle-même le résultat de ce travail de synthèse, qui organise un ensemble de tests en une documentation lisible.',
+                },
+              ],
             },
             {
-              name: 'Documentation technique',
-              color: '#AA96DA',
-              description: 'Structurer les choix et les livrables pour la maintenance.',
-            },
-          ],
-          traces: [
-            {
-              numero: '1',
-              titre: 'Journal de bord',
-              legende: 'Suivi des décisions et des validations.',
-            },
-            {
-              numero: '2',
-              titre: 'Dossier de présentation',
-              legende: 'Synthèse des objectifs, résultats et perspectives.',
-            },
-          ],
-        },
-        {
-          name: 'Faire un reporting régulier des actions réalisés',
-          elementarySkills: [
-            {
-              name: 'Planification',
-              color: '#FFE66D',
-              description: 'Découper le projet en phases avec des objectifs mesurables.',
-            },
-            {
-              name: 'Priorisation',
-              color: '#95E1D3',
-              description: 'Classer les tâches selon l’impact et l’urgence.',
-            },
-            {
-              name: 'Suivi d’avancement',
-              color: '#C7CEEA',
-              description: 'Mettre à jour l’état des tâches et gérer les écarts.',
-            },
-          ],
-          traces: [
-            {
-              numero: '1',
-              titre: 'Planning de projet',
-              legende: 'Organisation des étapes et estimation des charges.',
-            },
-            {
-              numero: '2',
-              titre: 'Suivi hebdomadaire',
-              legende: 'Tableau d’avancement avec actions correctives.',
+              numero: '8',
+              titre: 'Suivi de ses tâches dans l\'outil de gestion de projet',
+              legende: 'Trace n°8 : écran « Plan d\'actions » de l\'application MAESTRO, outil partagé où je renseignais et suivais mes propres tâches.',
+              image: '../public/image/TraceMAESTROActions.png',
+              descriptionGenerale: 'La trace n°8 montre l\'écran « Plan d\'actions » de MAESTRO. Particularité du projet : l\'application que je testais servait aussi d\'outil de gestion partagé pour le suivi du projet. Je testais MAESTRO sur son environnement de préproduction, mais c\'est la version en production qui était utilisée au quotidien comme outil de pilotage. Dans cet écran, chaque ligne est une action, avec un responsable, une priorité, un statut et des dates. On y voit plusieurs actions qui me sont assignées (Gautier BELEY), aux côtés de celles d\'autres membres du projet. La fenêtre ouverte au centre est une note que j\'ai rédigée sur l\'une de mes actions, pour détailler ce qui allait être réalisé (ici, le développement des tests de plusieurs écrans) et renvoyer vers le fichier de suivi correspondant.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Suivre ses tâches dans un outil de gestion de projet',
+                  texte: 'La trace n°8 démontre que je <strong class="c-purple">renseignais et tenais à jour mes propres tâches dans l\'outil de suivi partagé du projet</strong>. Pour chacune, j\'indiquais son intitulé, sa priorité, son statut d\'avancement et ses échéances, ce qui donnait au métier et à l\'équipe une visibilité directe sur ce que j\'avais fait et sur ce qu\'il me restait à faire. Je ne me limitais pas au statut : comme le montre la note ouverte au centre, <strong class="c-purple">je détaillais le contenu de mes actions par des commentaires</strong> précisant ce qui allait être fait et renvoyant vers les fichiers de suivi. Tenir ce suivi à jour faisait partie intégrante de mon travail : il ne suffisait pas de réaliser une tâche, il fallait aussi la rendre visible et traçable dans l\'outil commun, au même titre que les autres membres du projet.',
+                },
+              ],
             },
           ],
         },
       ],
       bilan: [
         {
-          skillName: 'Collaborer sur du code via Azure DevOps',
+          skillName: 'Documenter et suivre son travail',
           elementaryDetails: [
             {
-              name: 'Decoupage en phases',
-              context: 'Creation d\'un planning par etapes.',
-              learningContext: 'Vu en cours puis applique en projet.',
+              name: 'Synthétiser un travail réalisé',
+              context: 'Mise à plat et structuration de mon travail avant chaque rédaction documentaire, pour les deux types de documentation.',
+              learningContext: 'Compétence travaillée en stage, en partie transférée de la rédaction de comptes rendus vue en formation.',
               difficulty: 'Moyen',
             },
             {
-              name: 'Priorisation',
-              context: 'Classer les taches par urgence et impact.',
-              learningContext: 'Appris en cours et en pratique.',
+              name: 'Vulgariser une procédure pour le métier',
+              context: 'Rédaction d\'une procédure de lancement de tests destinée à un public non-technique.',
+              learningContext: 'Découvert en stage ; aucune documentation n\'existait, je me suis inspiré d\'autres projets.',
               difficulty: 'Moyen',
             },
             {
-              name: 'Suivi d\'avancement',
-              context: 'Mettre a jour les taches et livrables.',
-              learningContext: 'Appris lors des projets collectifs.',
+              name: 'Documenter techniquement pour les développeurs',
+              context: 'Rédaction de la documentation technique du code et de l\'architecture des tests.',
+              learningContext: 'Découvert en stage.',
               difficulty: 'Moyen',
+            },
+            {
+              name: 'Suivre ses tâches dans un outil de gestion de projet',
+              context: 'Renseignement et mise à jour de mes tâches (intitulé, priorité, statut, échéances) dans l\'outil de suivi partagé du projet.',
+              learningContext: 'Découvert en stage ; j\'avais vu le principe du suivi de projet en formation, mais jamais en conditions réelles dans un outil partagé.',
+              difficulty: 'Faible',
             },
           ],
-          context: 'Organisation et planification des phases du projet',
-          learningContext: 'Acquis par la pratique dans les projets académiques',
+          context: 'Documentation (métier et technique) et suivi de tâches sur le projet MAESTRO chez APRR.',
+          learningContext: 'Compétence consolidée en stage, sur un projet où aucune documentation n\'existait au départ.',
           difficulty: 'Moyen',
           level: 'Bon',
           levelBefore: 'Moyen',
           levelAfter: 'Bon',
-          levelBeforeText: 'Planification basique avec suivi limite.',
-          levelAfterText: 'Suivi plus rigoureux avec jalons clairs.',
-        },
-        {
-          skillName: 'Rédiger une documentation technique',
-          elementaryDetails: [
-            {
-              name: 'Comptes-rendus',
-              context: 'Partager les avancees au groupe.',
-              learningContext: 'Vu en cours puis pratique en equipe.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Gestion des retours',
-              context: 'Integrer les remarques et ajuster.',
-              learningContext: 'Appris en projet collectif.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Documentation',
-              context: 'Structurer les livrables et notes.',
-              learningContext: 'Appris en cours et renforce en projet.',
-              difficulty: 'Faible',
-            },
-          ],
-          context: 'Communication avec les stakeholders et l\'équipe',
-          learningContext: 'Développé en cours et lors de projet collectifs',
-          difficulty: 'Faible',
-          level: 'Bon',
-          levelBefore: 'Moyen',
-          levelAfter: 'Bon',
-          levelBeforeText: 'Communication parfois incomplete ou tardive.',
-          levelAfterText: 'Echanges plus regulier et comptes-rendus fiables.',
-        },
-        {
-          skillName: 'Faire un reporting régulier des actions réalisés',
-          elementaryDetails: [
-            {
-              name: 'Comptes-rendus',
-              context: 'Partager les avancees au groupe.',
-              learningContext: 'Vu en cours puis pratique en equipe.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Gestion des retours',
-              context: 'Integrer les remarques et ajuster.',
-              learningContext: 'Appris en projet collectif.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Documentation',
-              context: 'Structurer les livrables et notes.',
-              learningContext: 'Appris en cours et renforce en projet.',
-              difficulty: 'Faible',
-            },
-          ],
-          context: 'Communication avec les stakeholders et l\'équipe',
-          learningContext: 'Développé en cours et lors de projet collectifs',
-          difficulty: 'Faible',
-          level: 'Bon',
-          levelBefore: 'Moyen',
-          levelAfter: 'Bon',
-          levelBeforeText: 'Communication parfois incomplete ou tardive.',
-          levelAfterText: 'Echanges plus regulier et comptes-rendus fiables.',
+          levelBeforeText: 'En BUT, j\'avais rédigé des comptes rendus et abordé les principes du suivi de projet, mais je n\'avais jamais produit de documentation destinée à des publics différents, ni tenu un suivi de tâches dans un outil partagé en entreprise.',
+          levelAfterText: 'Je sais désormais produire deux types de documentation pour deux publics opposés — une procédure vulgarisée pour le métier, une documentation technique pour les développeurs — en adaptant à chaque fois le registre et le niveau de détail, ce qui est le cœur de la compétence. Le fait qu\'aucune documentation n\'existait sur le projet a renforcé cet apprentissage : j\'ai dû concevoir la structure documentaire entière, et pas seulement remplir un modèle existant. Je sais aussi rendre mon travail visible et traçable dans l\'outil de suivi partagé de l\'équipe.',
         },
       ],
     },
@@ -464,134 +327,107 @@ export const portfolioData = {
       resume: 'Description de votre expérience en entreprise, vos missions et vos apprentissages professionnels.',
       generalSkills: [
         {
-          name: 'S’intégrer à une équipe',
+          name: 'S\'intégrer dans une équipe de développement',
           elementarySkills: [
             {
-              name: 'Communication professionnelle',
-              color: '#A8D8EA',
-              description: 'Adapter son discours et ses échanges au contexte professionnel.',
+              name: 'Remonter les problèmes détectés à l\'équipe',
+              color: '#FF6B6B',
+              description: 'Signaler les bugs et anomalies repérés lors de l\'implémentation et de l\'exécution des tests.',
             },
             {
-              name: 'Collaboration',
-              color: '#AA96DA',
-              description: 'Travailler en coordination avec l’équipe et partager l’avancement.',
-            },
-            {
-              name: 'Culture d’entreprise',
-              color: '#A1DE93',
-              description: 'Comprendre les règles, outils et méthodes de l’organisation.',
-            },
-          ],
-          traces: [
-            {
-              numero: '1',
-              titre: 'Prise en main des outils',
-              legende: 'Découverte de l’environnement et des rituels d’équipe.',
-            },
-            {
-              numero: '2',
-              titre: 'Participation aux réunions',
-              legende: 'Contributions aux échanges et comptes-rendus.',
-            },
-          ],
-        },
-        {
-          name: 'Travailler en autonomie',
-          elementarySkills: [
-            {
-              name: 'Organisation personnelle',
-              color: '#FCBAD3',
-              description: 'Gérer son temps et ses priorités au quotidien.',
-            },
-            {
-              name: 'Prise d’initiative',
-              color: '#FFE66D',
-              description: 'Proposer des solutions et anticiper les besoins.',
-            },
-            {
-              name: 'Adaptabilité',
+              name: 'S\'approprier les outils de collaboration de l\'entreprise',
               color: '#4ECDC4',
-              description: 'S’ajuster aux imprévus et contraintes du terrain.',
+              description: 'Utiliser les outils partagés de l\'entreprise (écran Perturbations, Teams) selon leurs usages.',
+            },
+            {
+              name: 'Travailler en autonomie sur un dépôt de code partagé',
+              color: '#FFB84D',
+              description: 'Gérer ses branches et son travail sur le dépôt Azure DevOps de manière autonome.',
+            },
+            {
+              name: 'Intégrer son code via des pull requests',
+              color: '#9B8CFF',
+              description: 'Fusionner son travail dans le code commun par des pull requests, sur la bonne branche du flux.',
             },
           ],
           traces: [
             {
-              numero: '1',
-              titre: 'Mission en responsabilité',
-              legende: 'Réalisation d’une tâche complète avec retours réguliers.',
+              numero: '9',
+              titre: 'Déclaration des perturbations rencontrées',
+              legende: 'Trace n°9 : écran « Perturbations » de MAESTRO, où j\'ai déclaré les problèmes rencontrés lors de l\'écriture et de l\'exécution des tests.',
+              image: '../public/image/TracePerturbations.png',
+              descriptionGenerale: 'La trace n°9 montre l\'écran « Perturbations » de MAESTRO. Une perturbation est un problème qui empêche ou complique la réalisation d\'un test : bug applicatif, manque, dépendance technique… Pendant mon stage, je détectais ce type de problèmes à deux moments : lors de l\'implémentation d\'un test, quand je vérifiais le scénario, et lors de l\'exécution des tests, quand un test échouait à cause d\'un comportement anormal de l\'application. Deux des perturbations affichées sont de moi (les problèmes liés au bouton d\'accès aux fiches projets et au manuel d\'utilisateur) ; j\'en ai remonté d\'autres directement par Teams. Chaque perturbation est décrite par sa nature, son impact, sa date et son auteur.',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Remonter les problèmes détectés à l\'équipe',
+                  texte: 'La trace n°9 démontre que je ne me contentais pas d\'écrire et d\'exécuter des tests : j\'étais aussi <strong class="c-red">une source de remontée des problèmes vers l\'équipe</strong>. Lorsqu\'un test révélait un comportement anormal de l\'application, je le signalais à mon tuteur (le métier) et au développeur, pour qu\'il puisse être corrigé. Mon travail de test devenait ainsi un moyen de détecter des anomalies que personne n\'avait repérées, et de contribuer à la qualité du produit au-delà de ma seule mission.',
+                },
+                {
+                  titre: 'S\'approprier les outils de collaboration de l\'entreprise',
+                  texte: 'La trace n°9 montre aussi que j\'ai appris à <strong class="c-teal">utiliser les outils de collaboration propres à l\'entreprise</strong> pour communiquer ces problèmes. Plutôt que de signaler un bug de façon informelle, je le déclarais dans l\'écran Perturbations partagé avec l\'équipe, en respectant le format attendu : nature du problème, impact, date. Cette déclaration structurée, complétée par des échanges sur Teams pour les cas à traiter rapidement, m\'a permis de m\'insérer dans la manière de communiquer de l\'équipe et de rendre mes remontées exploitables par les autres.',
+                },
+              ],
             },
             {
-              numero: '2',
-              titre: 'Amélioration continue',
-              legende: 'Proposition d’optimisations suite aux observations terrain.',
+              numero: '10',
+              titre: 'Travail sur le dépôt de code partagé',
+              legende: 'Trace n°10 : vue des branches du dépôt Azure DevOps et historique des pull requests, montrant mon travail sur le code partagé du projet.',
+              image: '../public/image/TraceBranchesGit.png',
+              descriptionGenerale: 'La trace n°10 montre le dépôt Azure DevOps du projet : à gauche, la liste des branches ; au centre, l\'historique des commits et des pull requests. Le projet s\'organise autour d\'une branche main, d\'une branche develop (la branche par défaut) et de nombreuses branches feature. Mes branches apparaissent sous « Mine » (feature/SeparationTests, feature/testJalons&Livrables), au milieu de celles des autres membres du projet. L\'historique montre une succession de pull requests que j\'ai créées et fusionnées, avec leur statut de build (réussi ou échoué).',
+              descriptifSavoirFaire: [
+                {
+                  titre: 'Travailler en autonomie sur un dépôt de code partagé',
+                  texte: 'La trace n°10 démontre ma capacité à <strong class="c-orange">travailler de façon autonome sur une base de code commune à l\'équipe</strong>. Pour chaque sujet, je créais ma propre branche feature à partir de la branche par défaut, j\'y développais mes tests, puis j\'intégrais mon travail. J\'ai mené l\'essentiel de ce travail seul sur le projet, ce qui m\'a demandé de m\'organiser et de gérer mon dépôt de bout en bout. Nous avons toutefois pu réaliser diverses revues de code au cours de l\'implémentation : elles ont apporté un regard extérieur au mien qui m\'a aidé à produire un code de meilleure qualité.',
+                },
+                {
+                  titre: 'Intégrer son code via des pull requests',
+                  texte: 'La trace n°10 montre les nombreuses pull requests que j\'ai créées et fusionnées (les « Merged PR » de l\'historique). La pull request est le moment où mon travail rejoint le code commun : plutôt que de modifier directement la base partagée, je passais par une branche dédiée puis par une PR, ce qui <strong class="c-purple">permet d\'intégrer proprement son code et de déclencher les vérifications automatiques</strong> (on voit les builds associés réussir ou échouer dans la colonne Status). J\'ai aussi appris à quoi servait chaque branche dans ce flux : l\'exécution des tests sur la machine virtuelle se base sur main, tandis que l\'analyse SonarQube s\'effectue sur develop. Connaître cette répartition était nécessaire pour intégrer mon code sur la bonne branche selon l\'objectif visé.',
+                },
+              ],
             },
           ],
         },
       ],
       bilan: [
         {
-          skillName: 'Professional Adaptation',
+          skillName: 'S\'intégrer dans une équipe de développement',
           elementaryDetails: [
             {
-              name: 'Rituels d\'equipe',
-              context: 'Participation aux reunions et standups.',
-              learningContext: 'Appris en stage.',
+              name: 'Remonter les problèmes détectés à l\'équipe',
+              context: 'Signalement des bugs et anomalies repérés lors de l\'implémentation et de l\'exécution des tests, auprès du tuteur et du développeur.',
+              learningContext: 'Développé en stage, au contact direct de l\'équipe.',
+              difficulty: 'Faible',
+            },
+            {
+              name: 'S\'approprier les outils de collaboration de l\'entreprise',
+              context: 'Déclaration structurée des perturbations dans l\'outil partagé et échanges via Teams.',
+              learningContext: 'Découvert en stage ; je ne connaissais pas ces outils ni les usages de communication de l\'entreprise.',
+              difficulty: 'Faible',
+            },
+            {
+              name: 'Travailler en autonomie sur un dépôt de code partagé',
+              context: 'Gestion de mes branches et de mon travail sur le dépôt Azure DevOps, majoritairement seul.',
+              learningContext: 'J\'avais utilisé Git en formation, mais jamais sur un dépôt d\'entreprise partagé avec plusieurs contributeurs.',
               difficulty: 'Moyen',
             },
             {
-              name: 'Communication',
-              context: 'Echanges avec l\'equipe et le tuteur.',
-              learningContext: 'Appris en entreprise.',
-              difficulty: 'Moyen',
-            },
-            {
-              name: 'Pratiques internes',
-              context: 'Respect des outils et process.',
-              learningContext: 'Appris en stage.',
+              name: 'Intégrer son code via des pull requests',
+              context: 'Création et fusion de pull requests sur develop et main, en tenant compte du rôle de chaque branche.',
+              learningContext: 'Découvert en stage ; je connaissais les branches mais pas la pratique des pull requests ni l\'organisation main/develop/feature.',
               difficulty: 'Moyen',
             },
           ],
-          context: 'Intégration dans une équipe professionnelle',
-          learningContext: 'Appris en entreprise lors du stage/alternance',
+          context: 'Intégration dans l\'équipe de développement du projet MAESTRO chez APRR.',
+          learningContext: 'Compétence construite en stage, au contact de l\'équipe et des outils de l\'entreprise.',
           difficulty: 'Moyen',
           level: 'Bon',
-          levelBefore: 'Moyen',
+          levelBefore: 'Faible',
           levelAfter: 'Bon',
-          levelBeforeText: 'Besoin d\'accompagnement sur les usages internes.',
-          levelAfterText: 'Autonomie progressive dans les rituels d\'equipe.',
-        },
-        {
-          skillName: 'Task Management',
-          elementaryDetails: [
-            {
-              name: 'Organisation',
-              context: 'Planifier les taches quotidiennes.',
-              learningContext: 'Appris en entreprise.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Prise d\'initiative',
-              context: 'Proposer des solutions simples.',
-              learningContext: 'Appris en stage.',
-              difficulty: 'Faible',
-            },
-            {
-              name: 'Adaptabilite',
-              context: 'Ajuster les priorites selon les urgences.',
-              learningContext: 'Appris en entreprise.',
-              difficulty: 'Faible',
-            },
-          ],
-          context: 'Gestion des missions assignées et respect des délais',
-          learningContext: 'Développé lors de l\'expérience professionnelle',
-          difficulty: 'Faible',
-          level: 'Bon',
-          levelBefore: 'Moyen',
-          levelAfter: 'Bon',
-          levelBeforeText: 'Organisation parfois re-active.',
-          levelAfterText: 'Priorisation plus claire et initiatives ciblees.',
+          levelBeforeText: 'En formation, j\'avais utilisé Git pour des projets personnels ou scolaires (commits, branches simples), mais je n\'avais jamais travaillé sur un dépôt d\'entreprise partagé, ni utilisé les pull requests, ni intégré mon code dans un flux de branches structuré. Je n\'avais pas non plus l\'expérience de la communication au sein d\'une équipe technique en entreprise.',
+          levelAfterText: 'Je sais désormais m\'intégrer dans une équipe de développement : travailler sur un dépôt partagé en respectant son organisation de branches, intégrer mon code proprement via des pull requests, et remonter les problèmes que je détecte par les canaux de l\'équipe. Le fait d\'avoir souvent travaillé seul sur mon périmètre m\'a rendu autonome dans la gestion de mon code, tout en sachant solliciter des revues de code régulières pour bénéficier d\'un regard extérieur et améliorer la qualité de ce que je produisais. Mon intégration est aussi passée par de nombreux échanges que cette page ne peut pas illustrer par une trace : des discussions à l\'oral, des réunions de suivi et des remontées via Teams, qui ont fait partie de mon quotidien et de mon insertion dans l\'équipe.',
         },
       ],
     },
   },
 }
+ 

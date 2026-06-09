@@ -3,11 +3,15 @@
  
 <template>
   <div class="accueil-page"> 
-    <!-- But du site : texte à gauche, image à droite -->
+    <!-- But du site : image à gauche, titre + texte à droite -->
     <v-card elevation="1" class="pa-4 mb-6">
-      <h2 class="text-h5 mb-2">BELEY Gautier</h2>
-      <div class="text-image-row">
+      <div class="text-image-row image-left">
+        <div class="image-col">
+          <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
+          <v-img src="image/moi.jpg" height="220" ></v-img>
+        </div>
         <div class="text-col">
+          <h2 class="text-h5 mb-2">BELEY Gautier</h2>
           <p class="text-body2">
             Je suis BELEY Gautier et j'étudie actuellement en deuxième année de BUT Informatique à l'IUT Marie et Louis Pasteur à Belfort.
             Dans le cadre de ma formation, j'ai effectué un stage d'une durée de 10 semaines, du 7 avril au 12 juin 2026.
@@ -16,12 +20,6 @@
             <br>
             Ces savoir-faire s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
           </p>
-        </div>
-        <div class="image-col">
-          <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
-
-          <v-img src="image/moi.jpg" height="220" ></v-img>
-
         </div>
       </div>
     </v-card>
@@ -46,7 +44,7 @@
         </div>
         <div class="image-col">
           <v-img src="image/aprr_logo.jpeg" height="450" ></v-img>
-
+ 
         </div>
       </div>
     </v-card>
@@ -56,7 +54,7 @@
       <h2 class="text-h5 mb-2">Organigramme</h2>
       <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
       <v-img src="image/orga.jpg" height="500" ></v-img>
-
+ 
     </v-card>
  
     <!-- Contexte du stage -->
@@ -131,6 +129,10 @@ h2 {
   align-items: start;
 }
  
+.text-image-row.image-left {
+  grid-template-columns: 1fr 1.6fr;
+}
+ 
 .text-col {
   min-width: 0;
 }
@@ -138,7 +140,7 @@ h2 {
 .image-col {
   min-width: 0;
 }
-
+ 
 .aprr-logo {
   width: 100%;
   max-width: 320px;
@@ -191,7 +193,8 @@ h2 {
  
 /* Responsive : empile texte et image sur petits écrans */
 @media (max-width: 900px) {
-  .text-image-row {
+  .text-image-row,
+  .text-image-row.image-left {
     grid-template-columns: 1fr;
   }
 }

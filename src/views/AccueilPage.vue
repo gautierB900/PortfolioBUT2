@@ -128,7 +128,18 @@ const sections = [
     </v-card>
  
     <br>
-     
+ 
+    <v-card elevation="1" class="pa-4 mb-6">
+      <h2 class="text-h5 mb-2">Les 3 grandes parties</h2>
+      <p class="text-body2 mb-3">
+        Le portfolio est organise autour de trois axes : Technique, Suivi de projet et
+        Integration en entreprise. Chaque partie detaille les competences, les traces et
+        les bilans associes.
+      </p>
+    </v-card>
+ 
+    <h2 class="text-h4 mb-4">Sections Principales</h2>
+ 
     <v-row>
       <v-col v-for="section in sections" :key="section.title" cols="12" md="6" lg="4">
         <v-card hoverable @click="router.push(section.route)" class="h-100 card-hover">
@@ -152,7 +163,7 @@ const sections = [
  
 <style scoped>
 .accueil-page {
-  width: min(1500px, 98vw);
+  width: min(1600px, 96vw);
   margin: 0 auto;
 }
  

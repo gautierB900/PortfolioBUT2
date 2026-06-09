@@ -48,8 +48,6 @@ function closeZoom() {
         <p class="trace-legend">{{ trace.legende }}</p>
       </div>
       <div class="trace-content">
-        <h4 class="trace-title">Trace {{ trace.numero }} : {{ trace.titre }}</h4>
- 
         <p
           v-if="trace.descriptionGenerale"
           class="trace-desc"

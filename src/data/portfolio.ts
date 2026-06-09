@@ -169,36 +169,36 @@ export const portfolioData = {
           ],
           traces: [
             {
-              numero: '11',
+              numero: '6',
               titre: 'Problèmes de code remontés par l\'analyse SonarQube',
-              legende: 'Trace n°11 : liste des problèmes détectés par l\'analyse SonarQube sur le projet, avec leur type et leur sévérité.',
-              image: '../public/image/SonarQubProbleme.png',
-              descriptionGenerale: 'La trace n°11 montre l\'interface de SonarQube listant les problèmes détectés dans le code du projet. SonarQube est un outil d\'analyse statique : il examine le code sans l\'exécuter et signale les défauts de qualité. À gauche, les filtres permettent de trier les problèmes par type (bug, vulnérabilité, mauvaise pratique) et par sévérité (bloquant, critique, majeur, mineur). Au centre, chaque problème est affiché avec le fichier concerné, une description, sa sévérité et un temps de correction estimé. Cette analyse n\'était plus utilisée depuis longtemps sur le projet : c\'est moi qui l\'ai remise en service.',
+              legende: 'Trace n°6 : liste des problèmes détectés par l\'analyse SonarQube sur le projet, avec leur type et leur sévérité.',
+              image: '../public/image/TraceSonarQubeProbleme.png',
+              descriptionGenerale: 'La trace n°6 montre l\'interface de SonarQube listant les problèmes détectés dans le code du projet. SonarQube est un outil d\'analyse statique : il examine le code sans l\'exécuter et signale les défauts de qualité. À gauche, les filtres permettent de trier les problèmes par type (bug, vulnérabilité, mauvaise pratique) et par sévérité (bloquant, critique, majeur, mineur). Au centre, chaque problème est affiché avec le fichier concerné, une description, sa sévérité et un temps de correction estimé. Cette analyse n\'était plus utilisée depuis longtemps sur le projet : c\'est moi qui l\'ai remise en service.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Mettre en place l\'analyse SonarQube via un pipeline',
-                  texte: 'Pour que ces problèmes apparaissent, il a d\'abord fallu <strong class="c-red">remettre en route l\'analyse de qualité du code, qui était à l\'arrêt depuis longtemps</strong>. J\'ai écrit et configuré, dans Azure DevOps, un pipeline déclenchant l\'analyse SonarQube à chaque modification de la branche develop. Le projet était relié à SonarQube mais n\'avait plus de pipeline fonctionnel : mon travail a consisté à recréer cette automatisation, de sorte que chaque évolution du code soit désormais analysée sans intervention manuelle. La trace n°11 est le résultat direct de cette mise en place : sans le pipeline, aucun de ces problèmes ne serait remonté.',
+                  texte: 'Pour que ces problèmes apparaissent, il a d\'abord fallu <strong class="c-red">remettre en route l\'analyse de qualité du code, qui était à l\'arrêt depuis longtemps</strong>. J\'ai écrit et configuré, dans Azure DevOps, un pipeline déclenchant l\'analyse SonarQube à chaque modification de la branche develop. Le projet était relié à SonarQube mais n\'avait plus de pipeline fonctionnel : mon travail a consisté à recréer cette automatisation, de sorte que chaque évolution du code soit désormais analysée sans intervention manuelle. La trace n°6 est le résultat direct de cette mise en place : sans le pipeline, aucun de ces problèmes ne serait remonté.',
                 },
                 {
                   titre: 'Interpréter les problèmes remontés et leur gradation',
-                  texte: 'La trace n°11 démontre aussi ma capacité à <strong class="c-teal">lire et hiérarchiser les problèmes signalés par l\'outil</strong>. Tous les problèmes n\'ont pas la même importance : SonarQube les classe par type et par sévérité, et il faut savoir distinguer un défaut mineur d\'un problème majeur à corriger en priorité. J\'ai également dû identifier l\'origine des problèmes : certains de ceux qui subsistent proviennent du code modèle ayant servi à générer le projet, et non de mon propre code — je prévois d\'ailleurs de les supprimer également. Savoir faire ce tri évite de corriger au hasard et permet de concentrer l\'effort là où il compte.',
+                  texte: 'La trace n°6 démontre aussi ma capacité à <strong class="c-teal">lire et hiérarchiser les problèmes signalés par l\'outil</strong>. Tous les problèmes n\'ont pas la même importance : SonarQube les classe par type et par sévérité, et il faut savoir distinguer un défaut mineur d\'un problème majeur à corriger en priorité. J\'ai également dû identifier l\'origine des problèmes : certains de ceux qui subsistent proviennent du code modèle ayant servi à générer le projet, et non de mon propre code — je prévois d\'ailleurs de les supprimer également. Savoir faire ce tri évite de corriger au hasard et permet de concentrer l\'effort là où il compte.',
                 },
               ],
             },
             {
-              numero: '12',
+              numero: '7',
               titre: 'Évolution du nombre de problèmes dans le temps',
-              legende: 'Trace n°12 : graphique d\'activité de SonarQube montrant l\'évolution du nombre de problèmes du projet au fil des analyses.',
+              legende: 'Trace n°7 : graphique d\'activité de SonarQube montrant l\'évolution du nombre de problèmes du projet au fil des analyses.',
               image: '../public/image/TraceSonarQubeActivite.png',
-              descriptionGenerale: 'La trace n°12 montre le graphique d\'activité de SonarQube, qui trace l\'évolution du nombre de problèmes du projet dans le temps. On y observe une longue période stable, puis une forte hausse — la pointe correspond au moment où j\'ai remis l\'analyse en service : le pipeline a alors révélé d\'un coup la trentaine de problèmes accumulés et jusque-là non détectés. La courbe redescend ensuite, à mesure que je corrigeais ces problèmes.',
+              descriptionGenerale: 'La trace n°7 montre le graphique d\'activité de SonarQube, qui trace l\'évolution du nombre de problèmes du projet dans le temps. On y observe une longue période stable, puis une forte hausse — la pointe correspond au moment où j\'ai remis l\'analyse en service : le pipeline a alors révélé d\'un coup la trentaine de problèmes accumulés et jusque-là non détectés. La courbe redescend ensuite, à mesure que je corrigeais ces problèmes.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Corriger les problèmes de qualité du code',
-                  texte: 'La trace n°12 démontre ma capacité à <strong class="c-orange">traiter concrètement les problèmes remontés par l\'analyse</strong>. Une fois le pipeline en place, le projet affichait une trentaine de problèmes (la pointe du graphique). Je les ai corrigés un à un dans le code, ce qui se traduit par la redescente de la courbe. Cette trace est la preuve visuelle de mon action : je ne me suis pas contenté de mettre l\'outil en place et de constater les défauts, je les ai effectivement résorbés pour améliorer la qualité du code.',
+                  texte: 'La trace n°7 démontre ma capacité à <strong class="c-orange">traiter concrètement les problèmes remontés par l\'analyse</strong>. Une fois le pipeline en place, le projet affichait une trentaine de problèmes (la pointe du graphique). Je les ai corrigés un à un dans le code, ce qui se traduit par la redescente de la courbe. Cette trace est la preuve visuelle de mon action : je ne me suis pas contenté de mettre l\'outil en place et de constater les défauts, je les ai effectivement résorbés pour améliorer la qualité du code.',
                 },
                 {
                   titre: 'Suivre l\'évolution de la qualité dans le temps',
-                  texte: 'La trace n°12 montre aussi que je savais <strong class="c-purple">lire la tendance de la qualité du code sur la durée</strong>. Le graphique d\'activité, complété par la liste des analyses successives en bas, permet de vérifier que chaque analyse fait bien baisser le nombre de problèmes et que les corrections produisent l\'effet attendu. Ce suivi dans le temps donne une vision de l\'évolution de la qualité, au-delà d\'un simple instantané, et permet de s\'assurer que le projet va dans le bon sens.',
+                  texte: 'La trace n°7 montre aussi que je savais <strong class="c-purple">lire la tendance de la qualité du code sur la durée</strong>. Le graphique d\'activité, complété par la liste des analyses successives en bas, permet de vérifier que chaque analyse fait bien baisser le nombre de problèmes et que les corrections produisent l\'effet attendu. Ce suivi dans le temps donne une vision de l\'évolution de la qualité, au-delà d\'un simple instantané, et permet de s\'assurer que le projet va dans le bon sens.',
                 },
               ],
             },
@@ -331,15 +331,15 @@ export const portfolioData = {
           ],
           traces: [
             {
-              numero: '6',
+              numero: '8',
               titre: 'Documentation à destination du métier',
-              legende: 'Trace n°6 : page de wiki « Procédure d\'un lancement de test sur Azure Test Plans », rédigée pour permettre au métier de lancer lui-même une campagne de test.',
+              legende: 'Trace n°8 : page de wiki « Procédure d\'un lancement de test sur Azure Test Plans », rédigée pour permettre au métier de lancer lui-même une campagne de test.',
               image: '../public/image/TraceDocMetier.png',
-              descriptionGenerale: 'La trace n°6 montre une page du wiki que j\'ai rédigée, intitulée « Procédure d\'un lancement de test sur Azure Test Plans ». Lorsque je suis arrivé sur le projet, il n\'existait aucune documentation : je suis donc parti de zéro, en m\'inspirant de ce qui se faisait sur d\'autres projets de l\'entreprise. Cette page-ci s\'adresse au métier : elle décrit, étape par étape et captures à l\'appui, comment se rendre dans Azure Test Plans et déclencher l\'exécution des tests, sans avoir besoin de compétences techniques.',
+              descriptionGenerale: 'La trace n°8 montre une page du wiki que j\'ai rédigée, intitulée « Procédure d\'un lancement de test sur Azure Test Plans ». Lorsque je suis arrivé sur le projet, il n\'existait aucune documentation : je suis donc parti de zéro, en m\'inspirant de ce qui se faisait sur d\'autres projets de l\'entreprise. Cette page-ci s\'adresse au métier : elle décrit, étape par étape et captures à l\'appui, comment se rendre dans Azure Test Plans et déclencher l\'exécution des tests, sans avoir besoin de compétences techniques.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Vulgariser une procédure pour le métier',
-                  texte: 'La trace n°6 démontre ma capacité à <strong class="c-red">rendre une procédure technique accessible à un public non-développeur</strong>. L\'enjeu n\'était pas de décrire comment les tests fonctionnent, mais de permettre à une personne du métier de les lancer en toute autonomie. J\'ai donc découpé la procédure en étapes simples et numérotées, illustrées par des captures d\'écran, en évitant le vocabulaire technique inutile. Le critère de réussite était clair : quelqu\'un qui ne connaît pas l\'outil doit pouvoir suivre la page sans aide.',
+                  texte: 'La trace n°8 démontre ma capacité à <strong class="c-red">rendre une procédure technique accessible à un public non-développeur</strong>. L\'enjeu n\'était pas de décrire comment les tests fonctionnent, mais de permettre à une personne du métier de les lancer en toute autonomie. J\'ai donc découpé la procédure en étapes simples et numérotées, illustrées par des captures d\'écran, en évitant le vocabulaire technique inutile. Le critère de réussite était clair : quelqu\'un qui ne connaît pas l\'outil doit pouvoir suivre la page sans aide.',
                 },
                 {
                   titre: 'Synthétiser un travail réalisé',
@@ -348,32 +348,32 @@ export const portfolioData = {
               ],
             },
             {
-              numero: '7',
+              numero: '9',
               titre: 'Documentation technique pour les développeurs',
-              legende: 'Trace n°7 : page de wiki « Documentation Technique » présentant et commentant le code des tests, à destination des développeurs.',
+              legende: 'Trace n°9 : page de wiki « Documentation Technique » présentant et commentant le code des tests, à destination des développeurs.',
               image: '../public/image/TraceDocTechnique.png',
-              descriptionGenerale: 'La trace n°7 montre une autre partie du wiki que j\'ai rédigée, la « Documentation Technique ». Contrairement à la précédente, elle s\'adresse aux développeurs qui reprendront ou maintiendront les tests. On y trouve une arborescence de pages (README, Introduction, Architecture, Tests Web, Automatisation d\'un test, Explication des tests) et, pour chaque test, le code commenté accompagné d\'une explication du déroulé.',
+              descriptionGenerale: 'La trace n°9 montre une autre partie du wiki que j\'ai rédigée, la « Documentation Technique ». Contrairement à la précédente, elle s\'adresse aux développeurs qui reprendront ou maintiendront les tests. On y trouve une arborescence de pages (README, Introduction, Architecture, Tests Web, Automatisation d\'un test, Explication des tests) et, pour chaque test, le code commenté accompagné d\'une explication du déroulé.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Documenter techniquement pour les développeurs',
-                  texte: 'La trace n°7 démontre ma capacité à <strong class="c-orange">transmettre le détail technique de mon travail à des personnes qui devront le comprendre et le faire évoluer</strong>. Ici, le registre est inverse de celui de la trace n°6 : le vocabulaire technique est non seulement permis mais nécessaire, et le niveau de détail beaucoup plus fin (architecture, fonctionnement précis de chaque test, commentaires dans le code). C\'est une documentation de transmission, pensée pour qu\'un développeur puisse reprendre les tests sans repartir de zéro.',
+                  texte: 'La trace n°9 démontre ma capacité à <strong class="c-orange">transmettre le détail technique de mon travail à des personnes qui devront le comprendre et le faire évoluer</strong>. Ici, le registre est inverse de celui de la trace n°8 : le vocabulaire technique est non seulement permis mais nécessaire, et le niveau de détail beaucoup plus fin (architecture, fonctionnement précis de chaque test, commentaires dans le code). C\'est une documentation de transmission, pensée pour qu\'un développeur puisse reprendre les tests sans repartir de zéro.',
                 },
                 {
                   titre: 'Synthétiser un travail réalisé',
-                  texte: 'Comme pour la trace n°6, documenter le code supposait d\'abord de <strong class="c-teal">structurer et hiérarchiser l\'information</strong> : décider quoi expliquer, dans quel ordre, et à quel niveau de détail. L\'arborescence des pages (de l\'introduction générale jusqu\'à l\'explication d\'un test précis) est elle-même le résultat de ce travail de synthèse, qui organise un ensemble de tests en une documentation lisible.',
+                  texte: 'Comme pour la trace n°8, documenter le code supposait d\'abord de <strong class="c-teal">structurer et hiérarchiser l\'information</strong> : décider quoi expliquer, dans quel ordre, et à quel niveau de détail. L\'arborescence des pages (de l\'introduction générale jusqu\'à l\'explication d\'un test précis) est elle-même le résultat de ce travail de synthèse, qui organise un ensemble de tests en une documentation lisible.',
                 },
               ],
             },
             {
-              numero: '8',
+              numero: '10',
               titre: 'Suivi de ses tâches dans l\'outil de gestion de projet',
-              legende: 'Trace n°8 : écran « Plan d\'actions » de l\'application MAESTRO, outil partagé où je renseignais et suivais mes propres tâches.',
+              legende: 'Trace n°10 : écran « Plan d\'actions » de l\'application MAESTRO, outil partagé où je renseignais et suivais mes propres tâches.',
               image: '../public/image/TraceMAESTROActions.png',
-              descriptionGenerale: 'La trace n°8 montre l\'écran « Plan d\'actions » de MAESTRO. Particularité du projet : l\'application que je testais servait aussi d\'outil de gestion partagé pour le suivi du projet. Je testais MAESTRO sur son environnement de préproduction, mais c\'est la version en production qui était utilisée au quotidien comme outil de pilotage. Dans cet écran, chaque ligne est une action, avec un responsable, une priorité, un statut et des dates. On y voit plusieurs actions qui me sont assignées (Gautier BELEY), aux côtés de celles d\'autres membres du projet. La fenêtre ouverte au centre est une note que j\'ai rédigée sur l\'une de mes actions, pour détailler ce qui allait être réalisé (ici, le développement des tests de plusieurs écrans) et renvoyer vers le fichier de suivi correspondant.',
+              descriptionGenerale: 'La trace n°10 montre l\'écran « Plan d\'actions » de MAESTRO. Particularité du projet : l\'application que je testais servait aussi d\'outil de gestion partagé pour le suivi du projet. Je testais MAESTRO sur son environnement de préproduction, mais c\'est la version en production qui était utilisée au quotidien comme outil de pilotage. Dans cet écran, chaque ligne est une action, avec un responsable, une priorité, un statut et des dates. On y voit plusieurs actions qui me sont assignées (Gautier BELEY), aux côtés de celles d\'autres membres du projet. La fenêtre ouverte au centre est une note que j\'ai rédigée sur l\'une de mes actions, pour détailler ce qui allait être réalisé (ici, le développement des tests de plusieurs écrans) et renvoyer vers le fichier de suivi correspondant.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Suivre ses tâches dans un outil de gestion de projet',
-                  texte: 'La trace n°8 démontre que je <strong class="c-purple">renseignais et tenais à jour mes propres tâches dans l\'outil de suivi partagé du projet</strong>. Pour chacune, j\'indiquais son intitulé, sa priorité, son statut d\'avancement et ses échéances, ce qui donnait au métier et à l\'équipe une visibilité directe sur ce que j\'avais fait et sur ce qu\'il me restait à faire. Je ne me limitais pas au statut : comme le montre la note ouverte au centre, <strong class="c-purple">je détaillais le contenu de mes actions par des commentaires</strong> précisant ce qui allait être fait et renvoyant vers les fichiers de suivi. Tenir ce suivi à jour faisait partie intégrante de mon travail : il ne suffisait pas de réaliser une tâche, il fallait aussi la rendre visible et traçable dans l\'outil commun, au même titre que les autres membres du projet.',
+                  texte: 'La trace n°10 démontre que je <strong class="c-purple">renseignais et tenais à jour mes propres tâches dans l\'outil de suivi partagé du projet</strong>. Pour chacune, j\'indiquais son intitulé, sa priorité, son statut d\'avancement et ses échéances, ce qui donnait au métier et à l\'équipe une visibilité directe sur ce que j\'avais fait et sur ce qu\'il me restait à faire. Je ne me limitais pas au statut : comme le montre la note ouverte au centre, <strong class="c-purple">je détaillais le contenu de mes actions par des commentaires</strong> précisant ce qui allait être fait et renvoyant vers les fichiers de suivi. Tenir ce suivi à jour faisait partie intégrante de mon travail : il ne suffisait pas de réaliser une tâche, il fallait aussi la rendre visible et traçable dans l\'outil commun, au même titre que les autres membres du projet.',
                 },
               ],
             },
@@ -450,36 +450,36 @@ export const portfolioData = {
           ],
           traces: [
             {
-              numero: '9',
+              numero: '11',
               titre: 'Déclaration des perturbations rencontrées',
-              legende: 'Trace n°9 : écran « Perturbations » de MAESTRO, où j\'ai déclaré les problèmes rencontrés lors de l\'écriture et de l\'exécution des tests.',
+              legende: 'Trace n°11 : écran « Perturbations » de MAESTRO, où j\'ai déclaré les problèmes rencontrés lors de l\'écriture et de l\'exécution des tests.',
               image: '../public/image/TracePerturbations.png',
-              descriptionGenerale: 'La trace n°9 montre l\'écran « Perturbations » de MAESTRO. Une perturbation est un problème qui empêche ou complique la réalisation d\'un test : bug applicatif, manque, dépendance technique… Pendant mon stage, je détectais ce type de problèmes à deux moments : lors de l\'implémentation d\'un test, quand je vérifiais le scénario, et lors de l\'exécution des tests, quand un test échouait à cause d\'un comportement anormal de l\'application. Deux des perturbations affichées sont de moi (les problèmes liés au bouton d\'accès aux fiches projets et au manuel d\'utilisateur) ; j\'en ai remonté d\'autres directement par Teams. Chaque perturbation est décrite par sa nature, son impact, sa date et son auteur.',
+              descriptionGenerale: 'La trace n°11 montre l\'écran « Perturbations » de MAESTRO. Une perturbation est un problème qui empêche ou complique la réalisation d\'un test : bug applicatif, manque, dépendance technique… Pendant mon stage, je détectais ce type de problèmes à deux moments : lors de l\'implémentation d\'un test, quand je vérifiais le scénario, et lors de l\'exécution des tests, quand un test échouait à cause d\'un comportement anormal de l\'application. Deux des perturbations affichées sont de moi (les problèmes liés au bouton d\'accès aux fiches projets et au manuel d\'utilisateur) ; j\'en ai remonté d\'autres directement par Teams. Chaque perturbation est décrite par sa nature, son impact, sa date et son auteur.',
               descriptifSavoirFaire: [
                 {
                   titre: 'Remonter les problèmes détectés à l\'équipe',
-                  texte: 'La trace n°9 démontre que je ne me contentais pas d\'écrire et d\'exécuter des tests : j\'étais aussi <strong class="c-red">une source de remontée des problèmes vers l\'équipe</strong>. Lorsqu\'un test révélait un comportement anormal de l\'application, je le signalais à mon tuteur (le métier) et au développeur, pour qu\'il puisse être corrigé. Mon travail de test devenait ainsi un moyen de détecter des anomalies que personne n\'avait repérées, et de contribuer à la qualité du produit au-delà de ma seule mission.',
+                  texte: 'La trace n°11 démontre que je ne me contentais pas d\'écrire et d\'exécuter des tests : j\'étais aussi <strong class="c-red">une source de remontée des problèmes vers l\'équipe</strong>. Lorsqu\'un test révélait un comportement anormal de l\'application, je le signalais à mon tuteur (le métier) et au développeur, pour qu\'il puisse être corrigé. Mon travail de test devenait ainsi un moyen de détecter des anomalies que personne n\'avait repérées, et de contribuer à la qualité du produit au-delà de ma seule mission.',
                 },
                 {
                   titre: 'S\'approprier les outils de collaboration de l\'entreprise',
-                  texte: 'La trace n°9 montre aussi que j\'ai appris à <strong class="c-teal">utiliser les outils de collaboration propres à l\'entreprise</strong> pour communiquer ces problèmes. Plutôt que de signaler un bug de façon informelle, je le déclarais dans l\'écran Perturbations partagé avec l\'équipe, en respectant le format attendu : nature du problème, impact, date. Cette déclaration structurée, complétée par des échanges sur Teams pour les cas à traiter rapidement, m\'a permis de m\'insérer dans la manière de communiquer de l\'équipe et de rendre mes remontées exploitables par les autres.',
+                  texte: 'La trace n°11 montre aussi que j\'ai appris à <strong class="c-teal">utiliser les outils de collaboration propres à l\'entreprise</strong> pour communiquer ces problèmes. Plutôt que de signaler un bug de façon informelle, je le déclarais dans l\'écran Perturbations partagé avec l\'équipe, en respectant le format attendu : nature du problème, impact, date. Cette déclaration structurée, complétée par des échanges sur Teams pour les cas à traiter rapidement, m\'a permis de m\'insérer dans la manière de communiquer de l\'équipe et de rendre mes remontées exploitables par les autres.',
                 },
               ],
             },
             {
-              numero: '10',
+              numero: '12',
               titre: 'Travail sur le dépôt de code partagé',
-              legende: 'Trace n°10 : vue des branches du dépôt Azure DevOps et historique des pull requests, montrant mon travail sur le code partagé du projet.',
+              legende: 'Trace n°12 : vue des branches du dépôt Azure DevOps et historique des pull requests, montrant mon travail sur le code partagé du projet.',
               image: '../public/image/TraceBranchesGit.png',
-              descriptionGenerale: 'La trace n°10 montre le dépôt Azure DevOps du projet : à gauche, la liste des branches ; au centre, l\'historique des commits et des pull requests. Le projet s\'organise autour d\'une branche main, d\'une branche develop (la branche par défaut) et de nombreuses branches feature. Mes branches apparaissent sous « Mine » (feature/SeparationTests, feature/testJalons&Livrables), au milieu de celles des autres membres du projet. L\'historique montre une succession de pull requests que j\'ai créées et fusionnées, avec leur statut de build (réussi ou échoué).',
+              descriptionGenerale: 'La trace n°12 montre le dépôt Azure DevOps du projet : à gauche, la liste des branches ; au centre, l\'historique des commits et des pull requests. Le projet s\'organise autour d\'une branche main, d\'une branche develop (la branche par défaut) et de nombreuses branches feature. Mes branches apparaissent sous « Mine » (feature/SeparationTests, feature/testJalons&Livrables), au milieu de celles des autres membres du projet. L\'historique montre une succession de pull requests que j\'ai créées et fusionnées, avec leur statut de build (réussi ou échoué).',
               descriptifSavoirFaire: [
                 {
                   titre: 'Travailler en autonomie sur un dépôt de code partagé',
-                  texte: 'La trace n°10 démontre ma capacité à <strong class="c-orange">travailler de façon autonome sur une base de code commune à l\'équipe</strong>. Pour chaque sujet, je créais ma propre branche feature à partir de la branche par défaut, j\'y développais mes tests, puis j\'intégrais mon travail. J\'ai mené l\'essentiel de ce travail seul sur le projet, ce qui m\'a demandé de m\'organiser et de gérer mon dépôt de bout en bout. Nous avons toutefois pu réaliser diverses revues de code au cours de l\'implémentation : elles ont apporté un regard extérieur au mien qui m\'a aidé à produire un code de meilleure qualité.',
+                  texte: 'La trace n°12 démontre ma capacité à <strong class="c-orange">travailler de façon autonome sur une base de code commune à l\'équipe</strong>. Pour chaque sujet, je créais ma propre branche feature à partir de la branche par défaut, j\'y développais mes tests, puis j\'intégrais mon travail. J\'ai mené l\'essentiel de ce travail seul sur le projet, ce qui m\'a demandé de m\'organiser et de gérer mon dépôt de bout en bout. Nous avons toutefois pu réaliser diverses revues de code au cours de l\'implémentation : elles ont apporté un regard extérieur au mien qui m\'a aidé à produire un code de meilleure qualité.',
                 },
                 {
                   titre: 'Intégrer son code via des pull requests',
-                  texte: 'La trace n°10 montre les nombreuses pull requests que j\'ai créées et fusionnées (les « Merged PR » de l\'historique). La pull request est le moment où mon travail rejoint le code commun : plutôt que de modifier directement la base partagée, je passais par une branche dédiée puis par une PR, ce qui <strong class="c-purple">permet d\'intégrer proprement son code et de déclencher les vérifications automatiques</strong> (on voit les builds associés réussir ou échouer dans la colonne Status). J\'ai aussi appris à quoi servait chaque branche dans ce flux : l\'exécution des tests sur la machine virtuelle se base sur main, tandis que l\'analyse SonarQube s\'effectue sur develop. Connaître cette répartition était nécessaire pour intégrer mon code sur la bonne branche selon l\'objectif visé.',
+                  texte: 'La trace n°12 montre les nombreuses pull requests que j\'ai créées et fusionnées (les « Merged PR » de l\'historique). La pull request est le moment où mon travail rejoint le code commun : plutôt que de modifier directement la base partagée, je passais par une branche dédiée puis par une PR, ce qui <strong class="c-purple">permet d\'intégrer proprement son code et de déclencher les vérifications automatiques</strong> (on voit les builds associés réussir ou échouer dans la colonne Status). J\'ai aussi appris à quoi servait chaque branche dans ce flux : l\'exécution des tests sur la machine virtuelle se base sur main, tandis que l\'analyse SonarQube s\'effectue sur develop. Connaître cette répartition était nécessaire pour intégrer mon code sur la bonne branche selon l\'objectif visé.',
                 },
               ],
             },
@@ -528,3 +528,4 @@ export const portfolioData = {
     },
   },
 }
+ 

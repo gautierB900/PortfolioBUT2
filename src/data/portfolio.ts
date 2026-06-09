@@ -38,7 +38,7 @@ export const portfolioData = {
               numero: '1',
               titre: 'Cas de test au formalisme Azure DevOps',
               legende: 'Trace n°1 : cas de test « Contrôle visuellement les Jalons » rédigé sous Excel au formalisme attendu par Azure DevOps Test Plans.',
-              image: '../public/image/TraceCasDeTest.png',
+              image: `${import.meta.env.BASE_URL}image/TraceCasDeTest.png`,
               descriptionGenerale: 'La trace n°1 est une copie d\'écran d\'un de mes cas de test, rédigé dans un fichier Excel. À mon arrivée chez APRR, j\'ai d\'abord pris connaissance des écrans de l\'application MAESTRO déjà testés, puis mon tuteur, qui porte la vision métier, m\'a indiqué les écrans qu\'il souhaitait voir couverts. Pour chaque écran, je rédigeais un fichier Excel regroupant l\'ensemble des cas de test couvrant ses fonctionnalités. Le cas de test présenté dans la trace n°1 concerne l\'écran « Jalons &amp; Livrables » et vérifie l\'affichage correct des jalons. Chaque ligne décrit une étape : une action utilisateur dans la colonne <em>Step Action</em> et le résultat attendu correspondant dans la colonne <em>Step Expected</em>.',
               descriptifSavoirFaire: [
                 {
@@ -55,7 +55,7 @@ export const portfolioData = {
               numero: '2',
               titre: 'Organisation des cas de test en Test Plans versionnés',
               legende: 'Trace n°2 : arborescence des Test Plans dans Azure DevOps, organisés par version de MAESTRO et par suites thématiques.',
-              image: '../public/image/TraceTestPlans.png',
+              image: `${import.meta.env.BASE_URL}image/TraceTestPlans.png`,
               descriptionGenerale: 'La trace n°2 montre le module Test Plans d\'Azure DevOps, où sont regroupés et organisés tous les cas de test que j\'ai rédigés. Une fois un fichier Excel validé par le métier, je l\'injectais dans Azure DevOps, ce qui créait les cas de test correspondants. Je les rangeais ensuite dans une arborescence à deux niveaux : par version de l\'application et, à l\'intérieur, par suites thématiques correspondant aux écrans.',
               descriptifSavoirFaire: [
                 {
@@ -94,7 +94,7 @@ export const portfolioData = {
               numero: '3',
               titre: 'Inspection du DOM d\'une application Power Platform',
               legende: 'Trace n°3 : inspection via les outils de développement de Chrome d\'un élément de MAESTRO, application développée en low-code (Power Platform).',
-              image: '../public/image/TraceConsoleGoogle.png',
+              image: `${import.meta.env.BASE_URL}image/TraceConsoleGoogle.png`,
               descriptionGenerale: 'La trace n°3 montre les outils de développement de Chrome ouverts sur l\'application MAESTRO. À droite, l\'arbre HTML de l\'élément sélectionné ; en bas, le champ où je teste un XPath pour cibler cet élément. MAESTRO étant une Power App, c\'est-à-dire une application générée en low-code, son code HTML n\'est pas écrit à la main mais produit automatiquement par la plateforme. C\'est cette inspection qui constituait la première étape de tout test : avant de pouvoir piloter un élément (un bouton, un champ, une liste), je devais d\'abord savoir comment le désigner de façon fiable.',
               descriptifSavoirFaire: [
                 {
@@ -111,7 +111,7 @@ export const portfolioData = {
               numero: '4',
               titre: 'Wrapper d\'élément basé sur l\'attribut data-control-name',
               legende: 'Trace n°4 : méthode GetDataControlName que j\'ai codée pour générer un sélecteur court et réutilisable, et renvoyer un wrapper d\'élément.',
-              image: '../public/image/TraceIGraphicElement.png',
+              image: `${import.meta.env.BASE_URL}image/TraceIGraphicElement.png`,
               descriptionGenerale: 'La trace n°4 présente une méthode que j\'ai écrite, GetDataControlName. Elle se situe dans un fichier qui rassemble l\'ensemble des méthodes chargées de « wrapper » les éléments graphiques de l\'application, c\'est-à-dire de les localiser et de les encapsuler pour les rendre utilisables dans les tests. Elle prend en paramètre un texte et un index, construit un sélecteur XPath court à partir de l\'attribut data-control-name, et renvoie un WebElementWrapper : un objet qui encapsule l\'élément du navigateur ainsi qu\'un message de log décrivant l\'élément ciblé. Les commentaires au-dessus de la méthode montrent qu\'un même wrapper sert à cibler des éléments très différents (listes déroulantes, personnage « Nom du Resp. », etc.) selon le texte et l\'index passés.',
               descriptifSavoirFaire: [
                 {
@@ -128,7 +128,7 @@ export const portfolioData = {
               numero: '5',
               titre: 'Méthode de test automatisé avec le framework de l\'entreprise',
               legende: 'Trace n°5 : test automatisé ControleSuppressionJalon codé en C# selon le pattern Arrange / Act / Assert du framework de l\'entreprise.',
-              image: '../public/image/TraceTestVS.png',
+              image: `${import.meta.env.BASE_URL}image/TraceTestVS.png`,
               descriptionGenerale: 'La trace n°5 montre une méthode de test complète, ControleSuppressionJalon, qui vérifie que la suppression de jalons fonctionne dans MAESTRO. L\'annotation [Fact] déclare la méthode comme un test exécutable. Le test suit le pattern Arrange / Act / Assert structurant le framework de l\'entreprise : on prépare les données (Arrange), on effectue les actions de suppression (Act), puis on vérifie le résultat attendu (Assert). On y retrouve les helpers du framework (logHelper, actionHelper, assertHelper) et l\'objet iFramePage qui représente la page applicative.',
               descriptifSavoirFaire: [
                 {
@@ -172,7 +172,7 @@ export const portfolioData = {
               numero: '6',
               titre: 'Problèmes de code remontés par l\'analyse SonarQube',
               legende: 'Trace n°6 : liste des problèmes détectés par l\'analyse SonarQube sur le projet, avec leur type et leur sévérité.',
-              image: '../public/image/TraceSonarQubeProbleme.png',
+              image: `${import.meta.env.BASE_URL}image/TraceSonarQubeProbleme.png`,
               descriptionGenerale: 'La trace n°6 montre l\'interface de SonarQube listant les problèmes détectés dans le code du projet. SonarQube est un outil d\'analyse statique : il examine le code sans l\'exécuter et signale les défauts de qualité. À gauche, les filtres permettent de trier les problèmes par type (bug, vulnérabilité, mauvaise pratique) et par sévérité (bloquant, critique, majeur, mineur). Au centre, chaque problème est affiché avec le fichier concerné, une description, sa sévérité et un temps de correction estimé. Cette analyse n\'était plus utilisée depuis longtemps sur le projet : c\'est moi qui l\'ai remise en service.',
               descriptifSavoirFaire: [
                 {
@@ -189,7 +189,7 @@ export const portfolioData = {
               numero: '7',
               titre: 'Évolution du nombre de problèmes dans le temps',
               legende: 'Trace n°7 : graphique d\'activité de SonarQube montrant l\'évolution du nombre de problèmes du projet au fil des analyses.',
-              image: '../public/image/TraceSonarQubeActivite.png',
+              image: `${import.meta.env.BASE_URL}image/TraceSonarQubeActivite.png`,
               descriptionGenerale: 'La trace n°7 montre le graphique d\'activité de SonarQube, qui trace l\'évolution du nombre de problèmes du projet dans le temps. On y observe une longue période stable, puis une forte hausse — la pointe correspond au moment où j\'ai remis l\'analyse en service : le pipeline a alors révélé d\'un coup la trentaine de problèmes accumulés et jusque-là non détectés. La courbe redescend ensuite, à mesure que je corrigeais ces problèmes.',
               descriptifSavoirFaire: [
                 {
@@ -334,7 +334,7 @@ export const portfolioData = {
               numero: '8',
               titre: 'Documentation à destination du métier',
               legende: 'Trace n°8 : page de wiki « Procédure d\'un lancement de test sur Azure Test Plans », rédigée pour permettre au métier de lancer lui-même une campagne de test.',
-              image: '../public/image/TraceDocMetier.png',
+              image: `${import.meta.env.BASE_URL}image/TraceDocMetier.png`,
               descriptionGenerale: 'La trace n°8 montre une page du wiki que j\'ai rédigée, intitulée « Procédure d\'un lancement de test sur Azure Test Plans ». Lorsque je suis arrivé sur le projet, il n\'existait aucune documentation : je suis donc parti de zéro, en m\'inspirant de ce qui se faisait sur d\'autres projets de l\'entreprise. Cette page-ci s\'adresse au métier : elle décrit, étape par étape et captures à l\'appui, comment se rendre dans Azure Test Plans et déclencher l\'exécution des tests, sans avoir besoin de compétences techniques.',
               descriptifSavoirFaire: [
                 {
@@ -351,7 +351,7 @@ export const portfolioData = {
               numero: '9',
               titre: 'Documentation technique pour les développeurs',
               legende: 'Trace n°9 : page de wiki « Documentation Technique » présentant et commentant le code des tests, à destination des développeurs.',
-              image: '../public/image/TraceDocTechnique.png',
+              image: `${import.meta.env.BASE_URL}image/TraceDocTechnique.png`,
               descriptionGenerale: 'La trace n°9 montre une autre partie du wiki que j\'ai rédigée, la « Documentation Technique ». Contrairement à la précédente, elle s\'adresse aux développeurs qui reprendront ou maintiendront les tests. On y trouve une arborescence de pages (README, Introduction, Architecture, Tests Web, Automatisation d\'un test, Explication des tests) et, pour chaque test, le code commenté accompagné d\'une explication du déroulé.',
               descriptifSavoirFaire: [
                 {
@@ -368,7 +368,7 @@ export const portfolioData = {
               numero: '10',
               titre: 'Suivi de ses tâches dans l\'outil de gestion de projet',
               legende: 'Trace n°10 : écran « Plan d\'actions » de l\'application MAESTRO, outil partagé où je renseignais et suivais mes propres tâches.',
-              image: '../public/image/TraceMAESTROActions.png',
+              image: `${import.meta.env.BASE_URL}image/TraceMAESTROActions.png`,
               descriptionGenerale: 'La trace n°10 montre l\'écran « Plan d\'actions » de MAESTRO. Particularité du projet : l\'application que je testais servait aussi d\'outil de gestion partagé pour le suivi du projet. Je testais MAESTRO sur son environnement de préproduction, mais c\'est la version en production qui était utilisée au quotidien comme outil de pilotage. Dans cet écran, chaque ligne est une action, avec un responsable, une priorité, un statut et des dates. On y voit plusieurs actions qui me sont assignées (Gautier BELEY), aux côtés de celles d\'autres membres du projet. La fenêtre ouverte au centre est une note que j\'ai rédigée sur l\'une de mes actions, pour détailler ce qui allait être réalisé (ici, le développement des tests de plusieurs écrans) et renvoyer vers le fichier de suivi correspondant.',
               descriptifSavoirFaire: [
                 {
@@ -453,7 +453,7 @@ export const portfolioData = {
               numero: '11',
               titre: 'Déclaration des perturbations rencontrées',
               legende: 'Trace n°11 : écran « Perturbations » de MAESTRO, où j\'ai déclaré les problèmes rencontrés lors de l\'écriture et de l\'exécution des tests.',
-              image: '../public/image/TracePerturbations.png',
+              image: `${import.meta.env.BASE_URL}image/TracePerturbations.png`,
               descriptionGenerale: 'La trace n°11 montre l\'écran « Perturbations » de MAESTRO. Une perturbation est un problème qui empêche ou complique la réalisation d\'un test : bug applicatif, manque, dépendance technique… Pendant mon stage, je détectais ce type de problèmes à deux moments : lors de l\'implémentation d\'un test, quand je vérifiais le scénario, et lors de l\'exécution des tests, quand un test échouait à cause d\'un comportement anormal de l\'application. Deux des perturbations affichées sont de moi (les problèmes liés au bouton d\'accès aux fiches projets et au manuel d\'utilisateur) ; j\'en ai remonté d\'autres directement par Teams. Chaque perturbation est décrite par sa nature, son impact, sa date et son auteur.',
               descriptifSavoirFaire: [
                 {
@@ -470,7 +470,7 @@ export const portfolioData = {
               numero: '12',
               titre: 'Travail sur le dépôt de code partagé',
               legende: 'Trace n°12 : vue des branches du dépôt Azure DevOps et historique des pull requests, montrant mon travail sur le code partagé du projet.',
-              image: '../public/image/TraceBranchesGit.png',
+              image: `${import.meta.env.BASE_URL}image/TraceBranchesGit.png`,
               descriptionGenerale: 'La trace n°12 montre le dépôt Azure DevOps du projet : à gauche, la liste des branches ; au centre, l\'historique des commits et des pull requests. Le projet s\'organise autour d\'une branche main, d\'une branche develop (la branche par défaut) et de nombreuses branches feature. Mes branches apparaissent sous « Mine » (feature/SeparationTests, feature/testJalons&Livrables), au milieu de celles des autres membres du projet. L\'historique montre une succession de pull requests que j\'ai créées et fusionnées, avec leur statut de build (réussi ou échoué).',
               descriptifSavoirFaire: [
                 {

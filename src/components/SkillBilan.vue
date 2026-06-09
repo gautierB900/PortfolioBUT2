@@ -137,6 +137,7 @@ h4 {
   margin: 0 0 0.35rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
+  text-align: justify;
 }
 
 .level-compare {
@@ -179,5 +180,6 @@ h4 {
   margin: 0.6rem 0 0;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.9rem;
+  text-align: justify;
 }
 </style>

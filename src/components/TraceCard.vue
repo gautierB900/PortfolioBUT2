@@ -179,6 +179,7 @@ function closeZoom() {
   margin: 0 0 1rem;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.5;
+  text-align: justify;
 }
  
 .sf-block {
@@ -206,6 +207,7 @@ function closeZoom() {
   color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
   font-size: 0.92rem;
+  text-align: justify;
 }
  
 /* Coloration inline des savoir-faire dans le texte */

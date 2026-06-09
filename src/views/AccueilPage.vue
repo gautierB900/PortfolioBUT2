@@ -11,7 +11,7 @@
           <p class="text-body2">
             Je suis BELEY Gautier et j'étudie actuellement en deuxième année de BUT Informatique à l'IUT Marie et Louis Pasteur à Belfort.
             Dans le cadre de ma formation, j'ai effectué un stage d'une durée de 10 semaines, du 7 avril au 12 juin 2026.
-            J'ai effectué ce stage chez APRR, une société concession d'autoroutes, situé à Saint-Apollinaire.
+            J'ai effectué ce stage chez APRR, une société concession d'autoroutes.
             Donc ce site a pour but d'évoquer les savoir-faire que j'ai acquis durant le stage.
             <br>
             Ces savoir-faire s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
@@ -19,10 +19,9 @@
         </div>
         <div class="image-col">
           <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
-          <div class="image-placeholder">
-            <v-icon size="36">mdi-image-outline</v-icon>
-            <span>Image à ajouter</span>
-          </div>
+
+          <v-img src="image/moi.jpg" height="220" ></v-img>
+
         </div>
       </div>
     </v-card>
@@ -34,10 +33,10 @@
         <div class="text-col">
           <p class="text-body2">
             <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est une filiale d'Eiffage, une concession d'autoroute.
-            Elle a été créée en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe.
+            Elle a été créée en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe. J'ai effectué mon stage dans leur siège social à Saint-Apollinaire.
             <br><br>
-            J'ai intégré le département des services méthodes et contrats (SMC) qui fait partie du département études et éditions logiciels (DEEL), lui-même dans le département des systèmes et opérations péages (DSOP).
-            Le service SMC est un service transverse aux différents services du département DEEL. Ces services vont développer des applications destinées au péage, aux ressources humaines, à la finance et à la sécurité trafic. Le service SMC développe quant à lui  des tests automatiser sur ces applications ce qui permet de gagner du temps et d'améliorer leur qualité.
+            J'ai été affecté dans la direction des systèmes et opérations péages (DSOP). Plus particulièrement, dans le département études et éditions logiciels (DEEL). Dans ce département, j'ai intégré le service méthodes et contrats (SMC).
+            Le service SMC est un service transverse aux différents services du département DEEL. DEEL va développer des applications destinées au péage, aux ressources humaines, à la finance et à la sécurité trafic et le service SMC va accompagné le déploiement des applications en apportant de la méthode.
             
             <br><br>
             Pendant mon stage, j'ai principalement travaillé avec <strong>GALLI David</strong>, mon tuteur, qui me confiait mes missions et portait la vision métier, <strong>CHHEAN Sokchy</strong>, technicien informatique en alternance, qui m'a accompagné tout au long du stage, aussi bien dans la compréhension du code que dans mon intégration au sein de l'entreprise  et <strong>CHATILLON Frédéric</strong>, chef du département SMC.
@@ -46,11 +45,8 @@
           </p>
         </div>
         <div class="image-col">
-          <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
-          <div class="image-placeholder">
-            <v-icon size="36">mdi-image-outline</v-icon>
-            <span>Image à ajouter</span>
-          </div>
+          <v-img src="image/aprr_logo.jpeg" height="450" ></v-img>
+
         </div>
       </div>
     </v-card>
@@ -59,23 +55,21 @@
     <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Organigramme</h2>
       <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
-      <div class="image-placeholder organigramme-placeholder">
-        <v-icon size="36">mdi-image-outline</v-icon>
-        <span>Image de l'organigramme à ajouter</span>
-      </div>
+      <v-img src="image/orga.jpg" height="500" ></v-img>
+
     </v-card>
  
     <!-- Contexte du stage -->
     <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Contexte du stage</h2>
       <p class="text-body2">
-        Les missions principales de mon stage étaient d'automatiser des tests en C# avec le framework de l'entreprise, et d'assurer un reporting sur la qualité des livrables du département. L'application que je devais tester, <strong>MAESTRO</strong>, est une application de gestion de projet utilisée en interne.
+        Les missions principales de mon stage étaient d'automatiser des tests en C# avec le framework de l'entreprise, de faire des comptes rendus et des reportings sur le travail que j'ai réalisé et de faire du développement de pipeline. L'application que je devais tester, <strong>MAESTRO</strong>, est une application de gestion de projet utilisée en interne.
         <br><br>
         À mon arrivée, l'environnement de test était déjà existant et associé à MAESTRO. Cependant, il présentait plusieurs manques : aucune documentation n'accompagnait le projet, l'analyse de qualité de code SonarQube n'était plus utilisée depuis longtemps, et plusieurs écrans de l'application n'étaient pas encore couverts par des tests.
         <br><br>
-        Mon travail a donc consisté à compléter cet existant : écrire les cas de test puis les tests automatisés des écrans manquants, remettre en place et exploiter l'analyse SonarQube, et rédiger la documentation (technique et métier) qui faisait défaut. L'enjeu, pour le département, est d'imposer un socle de tests automatisés fiable avant la validation de chaque version d'une application.
+        Mon travail a été de continuer le testing de l'application et d'adapter ce qui a été fait au changement sur le site. J'ai du écrire les cas de test puis les tests automatisés des écrans manquants, remettre en place et exploiter l'analyse SonarQube, et rédiger la documentation (technique et métier) qui faisait défaut. L'enjeu, pour le département, est d'imposer un socle de tests automatisés fiable avant la validation de chaque version d'une application.
         <br><br>
-        Les principales technologies utilisées étaient Azure DevOps comme plateforme de développement et de gestion de projet, et Visual Studio 2022 comme environnement de développement.
+        Les principales technologies utilisées étaient Azure DevOps comme outil de collaboration et Visual Studio 2022 comme environnement de développement.
       </p>
     </v-card>
  
@@ -91,7 +85,7 @@
         c'est-à-dire traduire les besoins exprimés par le métier en cas de test structurés et exploitables.
         J'ai ensuite mis cette conception en pratique en apprenant à
         <RouterLink to="/technique/description" class="sf-link sf-tech">automatiser des tests de bout en bout pour une application web</RouterLink>,
-        sur une application générée en low-code particulièrement délicate à tester. Enfin, j'ai été amené à
+        qui était générée en low-code particulièrement délicate à tester. Enfin, j'ai été amené à
         <RouterLink to="/technique/description" class="sf-link sf-tech">garantir la qualité du code par l'analyse statique</RouterLink>,
         en remettant en service et en exploitant l'analyse SonarQube du projet.
       </p>
@@ -126,6 +120,7 @@ h2 {
 .accueil-page .text-body1,
 .accueil-page .text-body2 {
   color: rgba(255, 255, 255, 0.9);
+  text-align: justify;
 }
  
 /* Disposition texte + image */
@@ -142,6 +137,12 @@ h2 {
  
 .image-col {
   min-width: 0;
+}
+
+.aprr-logo {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
  
 /* Emplacement d'image vide */

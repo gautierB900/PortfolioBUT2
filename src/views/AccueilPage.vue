@@ -1,103 +1,86 @@
 <script setup lang="ts">
-import { portfolioData } from '../data/portfolio'
-import { useRouter } from 'vue-router'
- 
-const router = useRouter()
- 
-const sections = [
-  {
-    title: 'Technique',
-    icon: 'mdi-code-braces',
-    description: 'Savoir-faire techniques et compétences en développement',
-    route: '/technique/description',
-  },
-  {
-    title: 'Suivi de Projet',
-    icon: 'mdi-clipboard-text',
-    description: 'Gestion de projet et méthodologies',
-    route: '/suivi-projet/description',
-  },
-  {
-    title: 'Intégration en Entreprise',
-    icon: 'mdi-briefcase',
-    description: 'Expérience professionnelle et apprentissages',
-    route: '/integration-entreprise/description',
-  },
-]
 </script>
  
 <template>
-  <div class="accueil-page">
-    <v-card elevation="0" class="mb-6">
-      <v-card-text class="pa-8">
-        <h1 class="text-h3 mb-4">Bienvenue sur le Portfolio de BELEY Gautier</h1>
-      </v-card-text>
+  <div class="accueil-page"> 
+    <!-- But du site : texte à gauche, image à droite -->
+    <v-card elevation="1" class="pa-4 mb-6">
+      <h2 class="text-h5 mb-2">BELEY Gautier</h2>
+      <div class="text-image-row">
+        <div class="text-col">
+          <p class="text-body2">
+            Je suis BELEY Gautier et j'étudie actuellement en deuxième année de BUT Informatique à l'IUT Marie et Louis Pasteur à Belfort.
+            Dans le cadre de ma formation, j'ai effectué un stage d'une durée de 10 semaines, du 7 avril au 12 juin 2026.
+            J'ai effectué ce stage chez APRR, une société concession d'autoroutes, situé à Saint-Apollinaire.
+            Donc ce site a pour but d'évoquer les savoir-faire que j'ai acquis durant le stage.
+            <br>
+            Ces savoir-faire s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
+          </p>
+        </div>
+        <div class="image-col">
+          <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
+          <div class="image-placeholder">
+            <v-icon size="36">mdi-image-outline</v-icon>
+            <span>Image à ajouter</span>
+          </div>
+        </div>
+      </div>
     </v-card>
  
- 
-    <v-card elevation="1" class="pa-4 h-100">
-      <h2 class="text-h5 mb-2">But du site</h2>
-      <p class="text-body2">
-        Le site a pour but d'évoquer mes savoir-faire acquis durant le stage de deuxième année de deuxième année de BUT Informatique à l'IUT Marie et Louis Pasteur à Belort.
-      Les savoir-faire énumérés sur ce site s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
-      J'ai effectué ce stage chez APRR qui est une filiale de Eiffage à Saint-Apollinaire. 
-      Ce stage s'est fait sur une durée de 10 semaines, du 7 avril au 12 juin 2026.
-      </p>
+    <!-- Contexte entreprise : texte à gauche, image à droite -->
+    <v-card elevation="1" class="pa-4 mb-6">
+      <h2 class="text-h5 mb-2">Description du contexte entreprise du stage</h2>
+      <div class="text-image-row">
+        <div class="text-col">
+          <p class="text-body2">
+            <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est une filiale d'Eiffage, une concession d'autoroute.
+            Elle a été créée en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe.
+            <br><br>
+            J'ai intégré le département des services méthodes et contrats (SMC) qui fait partie du département études et éditions logiciels (DEEL), lui-même dans le département des systèmes et opérations péages (DSOP).
+            Le service SMC est un service transverse aux différents services du département DEEL. Ces services vont développer des applications destinées au péage, aux ressources humaines, à la finance et à la sécurité trafic. Le service SMC développe quant à lui  des tests automatiser sur ces applications ce qui permet de gagner du temps et d'améliorer leur qualité.
+            
+            <br><br>
+            Pendant mon stage, j'ai principalement travaillé avec <strong>GALLI David</strong>, mon tuteur, qui me confiait mes missions et portait la vision métier, <strong>CHHEAN Sokchy</strong>, technicien informatique en alternance, qui m'a accompagné tout au long du stage, aussi bien dans la compréhension du code que dans mon intégration au sein de l'entreprise  et <strong>CHATILLON Frédéric</strong>, chef du département SMC.
+            <br><br>
+            Pour mener à bien mes missions, je disposais d'un poste connecté au système informatique d'APRR (intranet, applications internes). J'ai dû effectuer des demandes d'accès pour pouvoir utiliser le dépôt de code partagé du projet sur Azure DevOps et l'instance SonarQube d'analyse de qualité. Les tests automatisés s'exécutaient quant à eux sur une machine virtuelle dédiée. La communication au sein de l'équipe passait par Teams, complétée par des points de suivi avec mon tuteur au fil du stage.
+          </p>
+        </div>
+        <div class="image-col">
+          <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
+          <div class="image-placeholder">
+            <v-icon size="36">mdi-image-outline</v-icon>
+            <span>Image à ajouter</span>
+          </div>
+        </div>
+      </div>
     </v-card>
  
-    <br>
- 
- 
-    <v-card elevation="1" class="pa-4 h-100">
-      <h2 class="text-h5 mb-2">Description du contexte entreprise du stage </h2>
-      <p class="text-body2">
-        <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est une filiale d'Eiffage, une concession d'autoroute.
-        Elle a été créé en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe.
-        <br>
-        <br>
-        Je prends place dans le département des services méthodes et contrats (SMC) qui se situe dans le départment études et éditions logiciels (DEEL) qui est lui dans le département des systèmes et opérations péages (DSOP).
-        La mission du département SMC est de faire des tests automatisés sur des applications de l'entreprise. Le département a pour but d'imposer un minimum de tests automatisés pour la validation d'une version d'application.
-        <br>
-        <br>
-        Pendant mon stage, j'ai principalement travaillé avec <strong>GALLI David</strong>, mon tuteur, qui me confiait mes missions, portait la vision métier et validait mes cas de test ; <strong>CHHEAN Sokchy</strong>, technicien informatique en alternance, qui m'a accompagné tout au long du stage, aussi bien dans la compréhension du code que dans mon intégration au sein de l'entreprise ; et <strong>CHATILLON Frédéric</strong>, chef du département SMC.
-      </p>
-      <br>
-      <p class="text-body2">
-        Pour mener à bien mes missions, je disposais d'un poste connecté au système informatique d'APRR (intranet, applications internes). J'ai dû effectuer des demandes d'accès pour pouvoir utiliser le dépôt de code partagé du projet sur Azure DevOps et l'instance SonarQube d'analyse de qualité. Les tests automatisés s'exécutaient quant à eux sur une machine virtuelle dédiée. La communication au sein de l'équipe passait par Teams, complétée par des points de suivi avec mon tuteur au fil du stage.
-      </p>
-    </v-card>
- 
-    <br>
- 
-    <v-card elevation="1" class="pa-4 h-100">
+    <!-- Organigramme : une seule image -->
+    <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Organigramme</h2>
-      <p class="text-body2 mb-2">
-        Voici l'organigramme d'APRR, en commençant de la présidente jusqu'à mon département : 
-      </p>
-      <!--TODO mettre les images de l'organigramme-->
+      <!-- TODO : remplacer le placeholder par <v-img src="image/NOM_DU_FICHIER.png" /> -->
+      <div class="image-placeholder organigramme-placeholder">
+        <v-icon size="36">mdi-image-outline</v-icon>
+        <span>Image de l'organigramme à ajouter</span>
+      </div>
     </v-card>
  
-    <br>
- 
-    <v-card elevation="1" class="pa-4 h-100">
+    <!-- Contexte du stage -->
+    <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Contexte du stage</h2>
       <p class="text-body2">
         Les missions principales de mon stage étaient d'automatiser des tests en C# avec le framework de l'entreprise, et d'assurer un reporting sur la qualité des livrables du département. L'application que je devais tester, <strong>MAESTRO</strong>, est une application de gestion de projet utilisée en interne.
-        <br>
-        <br>
+        <br><br>
         À mon arrivée, l'environnement de test était déjà existant et associé à MAESTRO. Cependant, il présentait plusieurs manques : aucune documentation n'accompagnait le projet, l'analyse de qualité de code SonarQube n'était plus utilisée depuis longtemps, et plusieurs écrans de l'application n'étaient pas encore couverts par des tests.
-        <br>
-        <br>
+        <br><br>
         Mon travail a donc consisté à compléter cet existant : écrire les cas de test puis les tests automatisés des écrans manquants, remettre en place et exploiter l'analyse SonarQube, et rédiger la documentation (technique et métier) qui faisait défaut. L'enjeu, pour le département, est d'imposer un socle de tests automatisés fiable avant la validation de chaque version d'une application.
-        <br>
-        <br>
+        <br><br>
         Les principales technologies utilisées étaient Azure DevOps comme plateforme de développement et de gestion de projet, et Visual Studio 2022 comme environnement de développement.
       </p>
     </v-card>
  
-    <br>
- 
-    <v-card elevation="1" class="pa-4 h-100">
+    <!-- Synthèse des savoir-faire (point 4 du cours) -->
+    <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Les savoir-faire mis en œuvre</h2>
       <p class="text-body2 mb-2">
         Mon stage m'a amené à mobiliser cinq savoir-faire généraux, répartis sur les trois axes du portfolio.
@@ -126,55 +109,13 @@ const sections = [
         Chacun de ces savoir-faire est détaillé, à travers des traces concrètes de mon travail, dans les trois pages correspondantes.
       </p>
     </v-card>
- 
-    <br>
- 
-    <v-card elevation="1" class="pa-4 mb-6">
-      <h2 class="text-h5 mb-2">Les 3 grandes parties</h2>
-      <p class="text-body2 mb-3">
-        Le portfolio est organise autour de trois axes : Technique, Suivi de projet et
-        Integration en entreprise. Chaque partie detaille les competences, les traces et
-        les bilans associes.
-      </p>
-    </v-card>
- 
-    <h2 class="text-h4 mb-4">Sections Principales</h2>
- 
-    <v-row>
-      <v-col v-for="section in sections" :key="section.title" cols="12" md="6" lg="4">
-        <v-card hoverable @click="router.push(section.route)" class="h-100 card-hover">
-          <v-card-item>
-            <template v-slot:prepend>
-              <v-avatar :icon="section.icon" color="primary" size="large"></v-avatar>
-            </template>
-            <v-card-title>{{ section.title }}</v-card-title>
-            <v-card-subtitle>{{ section.description }}</v-card-subtitle>
-          </v-card-item>
-          <v-card-actions>
-            <v-btn color="primary" variant="outlined">
-              Découvrir
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
   </div>
 </template>
  
 <style scoped>
 .accueil-page {
-  width: min(1600px, 96vw);
+  max-width: 1500px;
   margin: 0 auto;
-}
- 
-.card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
- 
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
  
 h1,
@@ -187,24 +128,43 @@ h2 {
   color: rgba(255, 255, 255, 0.9);
 }
  
-.accueil-page .v-card-title {
-  color: #ffffff;
+/* Disposition texte + image */
+.text-image-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
 }
  
-.accueil-page .v-card-subtitle {
-  color: rgba(255, 255, 255, 0.7);
+.text-col {
+  min-width: 0;
 }
  
-.organigramme {
-  padding-left: 1.2rem;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+.image-col {
+  min-width: 0;
 }
  
-.organigramme li {
-  margin-bottom: 0.25rem;
+/* Emplacement d'image vide */
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 200px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
 }
  
+.organigramme-placeholder {
+  min-height: 280px;
+}
+ 
+/* Liens colorés des savoir-faire */
 .sf-link {
   font-weight: 700;
   text-decoration: none;
@@ -226,5 +186,12 @@ h2 {
  
 .sf-integ {
   color: #9B8CFF;
+}
+ 
+/* Responsive : empile texte et image sur petits écrans */
+@media (max-width: 900px) {
+  .text-image-row {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

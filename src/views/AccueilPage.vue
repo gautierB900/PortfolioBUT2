@@ -18,7 +18,7 @@
             J'ai effectué ce stage chez APRR, une société concession d'autoroutes.
             Donc ce site a pour but d'évoquer les savoir-faire que j'ai acquis durant le stage.
             <br>
-            Ces savoir-faire s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration et travail en entreprise</strong>.
+            Ces savoir-faire s'articulent autour de 3 axes : <strong>Technique, Suivi de projet et Intégration & travail en entreprise</strong>.
           </p>
         </div>
       </div>
@@ -26,20 +26,20 @@
  
     <!-- Contexte entreprise : texte à gauche, image à droite -->
     <v-card elevation="1" class="pa-4 mb-6">
-      <h2 class="text-h5 mb-2">Description du contexte entreprise du stage</h2>
+      <h2 class="text-h5 mb-2">Description du contexte entreprise</h2>
       <div class="text-image-row">
         <div class="text-col">
           <p class="text-body2">
-            <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est une filiale d'Eiffage, une concession d'autoroute.
+            <strong>APRR</strong> (Autoroutes Paris-Rhin-Rhône) est société concessionnaire d'autoroute, filiale de'Eiffage.
             Elle a été créée en 1961. C'est le deuxième groupe autoroutier en France et le quatrième d'Europe. J'ai effectué mon stage dans leur siège social à Saint-Apollinaire.
             <br><br>
             J'ai été affecté dans la direction des systèmes et opérations péages (DSOP). Plus particulièrement, dans le département études et éditions logiciels (DEEL). Dans ce département, j'ai intégré le service méthodes et contrats (SMC).
-            Le service SMC est un service transverse aux différents services du département DEEL. DEEL va développer des applications destinées au péage, aux ressources humaines, à la finance et à la sécurité trafic et le service SMC va accompagné le déploiement des applications en apportant de la méthode.
+            Le service SMC est un service transverse aux différents services du département. DEEL va développer des applications destinées domaines péage, ressources humaines, la finance ou encore la sécurité et le trafic, le service SMC a pour mission d'accompagner ces équipes en y apportant son savoir faire et les méthodes du département.
             
             <br><br>
-            Pendant mon stage, j'ai principalement travaillé avec <strong>GALLI David</strong>, mon tuteur, qui me confiait mes missions et portait la vision métier, <strong>CHHEAN Sokchy</strong>, technicien informatique en alternance, qui m'a accompagné tout au long du stage, aussi bien dans la compréhension du code que dans mon intégration au sein de l'entreprise  et <strong>CHATILLON Frédéric</strong>, chef du département SMC.
+            Pendant mon stage, j'ai principalement travaillé avec <strong>GALLI David</strong>, mon tuteur, qui me confiait mes missions et portait la vision métier, <strong>CHHEAN Sokchy</strong>, technicien informatique en alternance, qui m'a accompagné tout au long du stage, aussi bien dans la compréhension du code que dans mon intégration au sein de l'entreprise. Sans oublier <strong>CHATILLON Frédéric</strong> en tant que chef de service SMC et pilote des activités au sein du département.
             <br><br>
-            Pour mener à bien mes missions, je disposais d'un poste connecté au système informatique d'APRR (intranet, applications internes). J'ai dû effectuer des demandes d'accès pour pouvoir utiliser le dépôt de code partagé du projet sur Azure DevOps et l'instance SonarQube d'analyse de qualité. Les tests automatisés s'exécutaient quant à eux sur une machine virtuelle dédiée. La communication au sein de l'équipe passait par Teams, complétée par des points de suivi avec mon tuteur au fil du stage.
+            Pour mener à bien mes missions, je disposais d'un poste bureautique connecté au SI (système d'information) APRR (intranet, applications internes). J'ai dû effectuer des demandes d'accès pour pouvoir utiliser le dépôt de code partagé du projet sur Azure DevOps et pour obtenir les droits nécessaires à l'analyse de qualité de mon code sur le serveur SonarQube d'APRR. Les tests automatisés s'exécutaient quant à eux sur une machine virtuelle dédiée. La communication au sein de l'équipe passait par Teams, complétée par des points de suivi avec mon tuteur au fil du stage.
           </p>
         </div>
         <div class="image-col">
@@ -61,7 +61,7 @@
     <v-card elevation="1" class="pa-4 mb-6">
       <h2 class="text-h5 mb-2">Contexte du stage</h2>
       <p class="text-body2">
-        Les missions principales de mon stage étaient d'automatiser des tests en C# avec le framework de l'entreprise, de faire des comptes rendus et des reportings sur le travail que j'ai réalisé et de faire du développement de pipeline. L'application que je devais tester, <strong>MAESTRO</strong>, est une application de gestion de projet utilisée en interne.
+        Les missions principales de mon stage étaient d'automatiser des tests en C# sur MAESTRO, c'est une application interne APRR qui aide au pilotage des projets pour les chefs de projet chez APRR, avec le framework de l'entreprise, de faire des comptes rendus et des reportings sur le travail que j'ai réalisé et de faire du développement de pipeline. L'application que je devais tester, <strong>MAESTRO</strong>, est une application de gestion de projet utilisée en interne.
         <br><br>
         À mon arrivée, l'environnement de test était déjà existant et associé à MAESTRO. Cependant, il présentait plusieurs manques : aucune documentation n'accompagnait le projet, l'analyse de qualité de code SonarQube n'était plus utilisée depuis longtemps, et plusieurs écrans de l'application n'étaient pas encore couverts par des tests.
         <br><br>
